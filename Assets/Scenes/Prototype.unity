@@ -19915,7 +19915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: a69195ef115a3804280a79b65b00c851, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 4cda5b8d50a5364479a278015c9a98c3, type: 2}
   isGlobal: 0
   blendDistance: 0
   weight: 1
@@ -32105,6 +32105,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CAVE2-PlayerController
       objectReference: {fileID: 0}
+    - target: {fileID: 1000013479211570, guid: c1621f4dd1e8c2748a5a423aa7736d55, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4000012806552110, guid: c1621f4dd1e8c2748a5a423aa7736d55, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.626
@@ -32185,10 +32189,6 @@ PrefabInstance:
     - target: {fileID: 114000013555117240, guid: c1621f4dd1e8c2748a5a423aa7736d55,
         type: 3}
       propertyPath: renderMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000013479211570, guid: c1621f4dd1e8c2748a5a423aa7736d55, type: 3}
-      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
