@@ -26770,7 +26770,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1185801649}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.93, y: 12.5, z: 0}
+  m_LocalPosition: {x: 17.54, y: 35.24, z: 27.79}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -27211,6 +27211,29 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 23840977387471220, guid: 136899b6daa83eb46bbe3b56c23990dc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666982480334838, guid: 136899b6daa83eb46bbe3b56c23990dc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666982480334838, guid: 136899b6daa83eb46bbe3b56c23990dc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666982480334838, guid: 136899b6daa83eb46bbe3b56c23990dc, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 33715609699148274, guid: 136899b6daa83eb46bbe3b56c23990dc,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 5592589470604460029, guid: cb79ceb4a7101a749bef42df22dc7d85,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 136899b6daa83eb46bbe3b56c23990dc, type: 3}
 --- !u!1 &1196956712 stripped
