@@ -27,7 +27,7 @@ RenderSettings:
   m_AmbientIntensity: 1.1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 032e2036d6eb91343b3be86e6a7a60cd, type: 2}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.8011919, g: 0.78884155, b: 0.7354545, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2802,7 +2802,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1179764898}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &99031468
+--- !u!114 &99031471
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6050,7 +6050,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 468139978}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &219232349
+--- !u!114 &219232352
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8706,7 +8706,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 212202721}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &363333118
+--- !u!114 &363333119
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12005,9 +12005,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineMode: 0
+  outlineMode: 1
   outlineColor: {r: 1, g: 0.40392157, b: 0, a: 1}
-  outlineWidth: 2
+  outlineWidth: 1
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
@@ -14910,6 +14910,30 @@ Transform:
   m_Father: {fileID: 374082182}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &642549354 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1307028704691040, guid: a8ef9485c3b5c93498a1fb451477c12b,
+    type: 3}
+  m_PrefabInstance: {fileID: 2003184538}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &642549357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642549354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 0.40392157, b: 0, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &644425020
 GameObject:
   m_ObjectHideFlags: 0
@@ -38241,6 +38265,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: aa6d17ee3b48447e9afbdb87430c7dd7,
+        type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa6d17ee3b48447e9afbdb87430c7dd7, type: 3}
 --- !u!1001 &1623418104
@@ -46396,7 +46425,7 @@ RectTransform:
   m_GameObject: {fileID: 1921772168}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.09, y: 0.09, z: 0.1}
+  m_LocalScale: {x: 0.08, y: 0.08, z: 0.1}
   m_Children: []
   m_Father: {fileID: 64703798}
   m_RootOrder: 0
