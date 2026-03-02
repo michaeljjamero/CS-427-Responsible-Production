@@ -32,15 +32,6 @@ public class EnergyVisualController : MonoBehaviour
     public float flickerAmount = 0.25f;
     public float flickerSpeed = 8f;
 
-    [Header("Reflection Probes (Optional)")]
-    public ReflectionProbe[] reflectionProbes;
-    [Range(0.5f, 10f)] public float probeRefreshSeconds = 2f;   // how often to refresh
-    [Range(0f, 5f)] public float energyRefreshDelta = 5f;       // refresh if energy changes by this much
-    public bool refreshProbes = true;
-
-    private float _nextProbeRefreshTime = 0f;
-    private float _lastProbeEnergy = -999f;
-
     float[] baseInteriorIntensities;
 
     // Skybox/Cubemap property names (Unity built-in)
