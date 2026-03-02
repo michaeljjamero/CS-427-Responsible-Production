@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 741303246}
-  m_IndirectSpecularColor: {r: 0.8011919, g: 0.78884155, b: 0.7354545, a: 1}
+  m_IndirectSpecularColor: {r: 0.73996335, g: 0.82496774, b: 0.90262175, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5711,8 +5711,8 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 0
-  m_RefreshMode: 0
+  m_Mode: 1
+  m_RefreshMode: 2
   m_TimeSlicingMode: 0
   m_Resolution: 1024
   m_UpdateFrequency: 0
@@ -5733,7 +5733,8 @@ ReflectionProbe:
   m_RenderDynamicObjects: 0
   m_UseOcclusionCulling: 1
   m_Importance: 1
-  m_CustomBakedTexture: {fileID: 0}
+  m_CustomBakedTexture: {fileID: 8900000, guid: 06b91d7dcb09b474a8f8ac88ce10c495,
+    type: 3}
 --- !u!1001 &212202721
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8192,8 +8193,8 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 0
-  m_RefreshMode: 0
+  m_Mode: 1
+  m_RefreshMode: 2
   m_TimeSlicingMode: 0
   m_Resolution: 1024
   m_UpdateFrequency: 0
@@ -8214,7 +8215,8 @@ ReflectionProbe:
   m_RenderDynamicObjects: 0
   m_UseOcclusionCulling: 1
   m_Importance: 1
-  m_CustomBakedTexture: {fileID: 0}
+  m_CustomBakedTexture: {fileID: 8900000, guid: 06b91d7dcb09b474a8f8ac88ce10c495,
+    type: 3}
 --- !u!1001 &337591659
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8580,8 +8582,8 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 0
-  m_RefreshMode: 0
+  m_Mode: 1
+  m_RefreshMode: 2
   m_TimeSlicingMode: 0
   m_Resolution: 1024
   m_UpdateFrequency: 0
@@ -8602,7 +8604,8 @@ ReflectionProbe:
   m_RenderDynamicObjects: 0
   m_UseOcclusionCulling: 1
   m_Importance: 1
-  m_CustomBakedTexture: {fileID: 0}
+  m_CustomBakedTexture: {fileID: 8900000, guid: 06b91d7dcb09b474a8f8ac88ce10c495,
+    type: 3}
 --- !u!1 &350169013
 GameObject:
   m_ObjectHideFlags: 0
@@ -11182,8 +11185,8 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 0
-  m_RefreshMode: 0
+  m_Mode: 1
+  m_RefreshMode: 2
   m_TimeSlicingMode: 0
   m_Resolution: 1024
   m_UpdateFrequency: 0
@@ -11204,7 +11207,8 @@ ReflectionProbe:
   m_RenderDynamicObjects: 0
   m_UseOcclusionCulling: 1
   m_Importance: 1
-  m_CustomBakedTexture: {fileID: 0}
+  m_CustomBakedTexture: {fileID: 8900000, guid: 06b91d7dcb09b474a8f8ac88ce10c495,
+    type: 3}
 --- !u!4 &479991562
 Transform:
   m_ObjectHideFlags: 0
@@ -11246,8 +11250,8 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 0
-  m_RefreshMode: 0
+  m_Mode: 1
+  m_RefreshMode: 2
   m_TimeSlicingMode: 0
   m_Resolution: 1024
   m_UpdateFrequency: 0
@@ -11268,7 +11272,8 @@ ReflectionProbe:
   m_RenderDynamicObjects: 0
   m_UseOcclusionCulling: 1
   m_Importance: 1
-  m_CustomBakedTexture: {fileID: 0}
+  m_CustomBakedTexture: {fileID: 8900000, guid: 06b91d7dcb09b474a8f8ac88ce10c495,
+    type: 3}
 --- !u!4 &480053340
 Transform:
   m_ObjectHideFlags: 0
@@ -11387,7 +11392,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4228493965429170, guid: 65815a23b1645dd4989487969b754348, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65815a23b1645dd4989487969b754348, type: 3}
@@ -11700,8 +11705,8 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 0
-  m_RefreshMode: 0
+  m_Mode: 1
+  m_RefreshMode: 2
   m_TimeSlicingMode: 0
   m_Resolution: 1024
   m_UpdateFrequency: 0
@@ -11722,7 +11727,8 @@ ReflectionProbe:
   m_RenderDynamicObjects: 0
   m_UseOcclusionCulling: 1
   m_Importance: 1
-  m_CustomBakedTexture: {fileID: 0}
+  m_CustomBakedTexture: {fileID: 8900000, guid: 06b91d7dcb09b474a8f8ac88ce10c495,
+    type: 3}
 --- !u!4 &503429862
 Transform:
   m_ObjectHideFlags: 0
@@ -12119,7 +12125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4946866789792328, guid: 447ed0bad467f8243b5c9af6d235bec8, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4946866789792328, guid: 447ed0bad467f8243b5c9af6d235bec8, type: 3}
       propertyPath: m_LocalScale.x
@@ -14961,8 +14967,8 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 0
-  m_RefreshMode: 0
+  m_Mode: 1
+  m_RefreshMode: 2
   m_TimeSlicingMode: 0
   m_Resolution: 1024
   m_UpdateFrequency: 0
@@ -14983,7 +14989,8 @@ ReflectionProbe:
   m_RenderDynamicObjects: 0
   m_UseOcclusionCulling: 1
   m_Importance: 1
-  m_CustomBakedTexture: {fileID: 0}
+  m_CustomBakedTexture: {fileID: 8900000, guid: 06b91d7dcb09b474a8f8ac88ce10c495,
+    type: 3}
 --- !u!4 &644425022
 Transform:
   m_ObjectHideFlags: 0
@@ -15091,7 +15098,6 @@ Transform:
   - {fileID: 17860942}
   - {fileID: 1877561949}
   - {fileID: 155198214}
-  - {fileID: 690094222}
   - {fileID: 534657342}
   - {fileID: 1278562127}
   - {fileID: 482201240}
@@ -16007,69 +16013,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 7d88fd218f0524c3bbba201eb170784b,
     type: 3}
   m_PrefabInstance: {fileID: 687876921}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &690094221
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 659907408}
-    m_Modifications:
-    - target: {fileID: 1106170214861072, guid: 447ed0bad467f8243b5c9af6d235bec8, type: 3}
-      propertyPath: m_Name
-      value: HangingLight_a_01 (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1106170214861072, guid: 447ed0bad467f8243b5c9af6d235bec8, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 4946866789792328, guid: 447ed0bad467f8243b5c9af6d235bec8, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -3.1243587
-      objectReference: {fileID: 0}
-    - target: {fileID: 4946866789792328, guid: 447ed0bad467f8243b5c9af6d235bec8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.2233438
-      objectReference: {fileID: 0}
-    - target: {fileID: 4946866789792328, guid: 447ed0bad467f8243b5c9af6d235bec8, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.2140751
-      objectReference: {fileID: 0}
-    - target: {fileID: 4946866789792328, guid: 447ed0bad467f8243b5c9af6d235bec8, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.000000015454312
-      objectReference: {fileID: 0}
-    - target: {fileID: 4946866789792328, guid: 447ed0bad467f8243b5c9af6d235bec8, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4946866789792328, guid: 447ed0bad467f8243b5c9af6d235bec8, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.000000015454312
-      objectReference: {fileID: 0}
-    - target: {fileID: 4946866789792328, guid: 447ed0bad467f8243b5c9af6d235bec8, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4946866789792328, guid: 447ed0bad467f8243b5c9af6d235bec8, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4946866789792328, guid: 447ed0bad467f8243b5c9af6d235bec8, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4946866789792328, guid: 447ed0bad467f8243b5c9af6d235bec8, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 447ed0bad467f8243b5c9af6d235bec8, type: 3}
---- !u!4 &690094222 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4946866789792328, guid: 447ed0bad467f8243b5c9af6d235bec8,
-    type: 3}
-  m_PrefabInstance: {fileID: 690094221}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &693690465
 PrefabInstance:
@@ -17454,7 +17397,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 9
   m_Type: 1
-  m_Color: {r: 1, g: 0.6513464, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 0.5
   m_Range: 10
   m_SpotAngle: 30
@@ -17591,8 +17534,8 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 0
-  m_RefreshMode: 0
+  m_Mode: 1
+  m_RefreshMode: 2
   m_TimeSlicingMode: 0
   m_Resolution: 1024
   m_UpdateFrequency: 0
@@ -17613,7 +17556,8 @@ ReflectionProbe:
   m_RenderDynamicObjects: 0
   m_UseOcclusionCulling: 1
   m_Importance: 1
-  m_CustomBakedTexture: {fileID: 0}
+  m_CustomBakedTexture: {fileID: 8900000, guid: 06b91d7dcb09b474a8f8ac88ce10c495,
+    type: 3}
 --- !u!1001 &744590579
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18128,8 +18072,8 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 0
-  m_RefreshMode: 0
+  m_Mode: 1
+  m_RefreshMode: 2
   m_TimeSlicingMode: 0
   m_Resolution: 1024
   m_UpdateFrequency: 0
@@ -18150,7 +18094,8 @@ ReflectionProbe:
   m_RenderDynamicObjects: 0
   m_UseOcclusionCulling: 1
   m_Importance: 1
-  m_CustomBakedTexture: {fileID: 0}
+  m_CustomBakedTexture: {fileID: 8900000, guid: 06b91d7dcb09b474a8f8ac88ce10c495,
+    type: 3}
 --- !u!4 &761133151
 Transform:
   m_ObjectHideFlags: 0
@@ -18508,8 +18453,8 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 0
-  m_RefreshMode: 0
+  m_Mode: 1
+  m_RefreshMode: 2
   m_TimeSlicingMode: 0
   m_Resolution: 1024
   m_UpdateFrequency: 0
@@ -18530,7 +18475,8 @@ ReflectionProbe:
   m_RenderDynamicObjects: 0
   m_UseOcclusionCulling: 1
   m_Importance: 1
-  m_CustomBakedTexture: {fileID: 0}
+  m_CustomBakedTexture: {fileID: 8900000, guid: 06b91d7dcb09b474a8f8ac88ce10c495,
+    type: 3}
 --- !u!4 &770656989
 Transform:
   m_ObjectHideFlags: 0
@@ -20444,8 +20390,8 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 0
-  m_RefreshMode: 0
+  m_Mode: 1
+  m_RefreshMode: 2
   m_TimeSlicingMode: 0
   m_Resolution: 1024
   m_UpdateFrequency: 0
@@ -20466,7 +20412,8 @@ ReflectionProbe:
   m_RenderDynamicObjects: 0
   m_UseOcclusionCulling: 1
   m_Importance: 1
-  m_CustomBakedTexture: {fileID: 0}
+  m_CustomBakedTexture: {fileID: 8900000, guid: 06b91d7dcb09b474a8f8ac88ce10c495,
+    type: 3}
 --- !u!1001 &856581000
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25007,8 +24954,8 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 0
-  m_RefreshMode: 0
+  m_Mode: 1
+  m_RefreshMode: 2
   m_TimeSlicingMode: 0
   m_Resolution: 1024
   m_UpdateFrequency: 0
@@ -25029,7 +24976,8 @@ ReflectionProbe:
   m_RenderDynamicObjects: 0
   m_UseOcclusionCulling: 1
   m_Importance: 1
-  m_CustomBakedTexture: {fileID: 0}
+  m_CustomBakedTexture: {fileID: 8900000, guid: 06b91d7dcb09b474a8f8ac88ce10c495,
+    type: 3}
 --- !u!4 &1051328882
 Transform:
   m_ObjectHideFlags: 0
@@ -25118,8 +25066,8 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 0
-  m_RefreshMode: 0
+  m_Mode: 1
+  m_RefreshMode: 2
   m_TimeSlicingMode: 0
   m_Resolution: 1024
   m_UpdateFrequency: 0
@@ -25140,7 +25088,8 @@ ReflectionProbe:
   m_RenderDynamicObjects: 0
   m_UseOcclusionCulling: 1
   m_Importance: 1
-  m_CustomBakedTexture: {fileID: 0}
+  m_CustomBakedTexture: {fileID: 8900000, guid: 06b91d7dcb09b474a8f8ac88ce10c495,
+    type: 3}
 --- !u!1001 &1064102187
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29777,7 +29726,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4946866789792328, guid: 447ed0bad467f8243b5c9af6d235bec8, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4946866789792328, guid: 447ed0bad467f8243b5c9af6d235bec8, type: 3}
       propertyPath: m_LocalScale.x
@@ -30552,6 +30501,10 @@ MonoBehaviour:
   flickerThreshold: 30
   flickerAmount: 0.25
   flickerSpeed: 8
+  reflectionProbes: []
+  probeRefreshSeconds: 3
+  energyRefreshDelta: 5
+  refreshProbes: 1
 --- !u!4 &1325506765
 Transform:
   m_ObjectHideFlags: 0
@@ -31861,8 +31814,8 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 0
-  m_RefreshMode: 0
+  m_Mode: 1
+  m_RefreshMode: 2
   m_TimeSlicingMode: 0
   m_Resolution: 1024
   m_UpdateFrequency: 0
@@ -31883,7 +31836,8 @@ ReflectionProbe:
   m_RenderDynamicObjects: 0
   m_UseOcclusionCulling: 1
   m_Importance: 1
-  m_CustomBakedTexture: {fileID: 0}
+  m_CustomBakedTexture: {fileID: 8900000, guid: 06b91d7dcb09b474a8f8ac88ce10c495,
+    type: 3}
 --- !u!4 &1359322795
 Transform:
   m_ObjectHideFlags: 0
@@ -36907,8 +36861,8 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 0
-  m_RefreshMode: 0
+  m_Mode: 1
+  m_RefreshMode: 2
   m_TimeSlicingMode: 0
   m_Resolution: 1024
   m_UpdateFrequency: 0
@@ -36929,7 +36883,8 @@ ReflectionProbe:
   m_RenderDynamicObjects: 0
   m_UseOcclusionCulling: 1
   m_Importance: 1
-  m_CustomBakedTexture: {fileID: 0}
+  m_CustomBakedTexture: {fileID: 8900000, guid: 06b91d7dcb09b474a8f8ac88ce10c495,
+    type: 3}
 --- !u!1001 &1559576801
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43614,8 +43569,8 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 0
-  m_RefreshMode: 0
+  m_Mode: 1
+  m_RefreshMode: 2
   m_TimeSlicingMode: 0
   m_Resolution: 1024
   m_UpdateFrequency: 0
@@ -43636,7 +43591,8 @@ ReflectionProbe:
   m_RenderDynamicObjects: 0
   m_UseOcclusionCulling: 1
   m_Importance: 1
-  m_CustomBakedTexture: {fileID: 0}
+  m_CustomBakedTexture: {fileID: 8900000, guid: 06b91d7dcb09b474a8f8ac88ce10c495,
+    type: 3}
 --- !u!1 &1824017177
 GameObject:
   m_ObjectHideFlags: 0
@@ -45046,8 +45002,8 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 0
-  m_RefreshMode: 0
+  m_Mode: 1
+  m_RefreshMode: 2
   m_TimeSlicingMode: 0
   m_Resolution: 1024
   m_UpdateFrequency: 0
@@ -45068,7 +45024,8 @@ ReflectionProbe:
   m_RenderDynamicObjects: 0
   m_UseOcclusionCulling: 1
   m_Importance: 1
-  m_CustomBakedTexture: {fileID: 0}
+  m_CustomBakedTexture: {fileID: 8900000, guid: 06b91d7dcb09b474a8f8ac88ce10c495,
+    type: 3}
 --- !u!4 &1865601069
 Transform:
   m_ObjectHideFlags: 0
@@ -47946,8 +47903,8 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 0
-  m_RefreshMode: 0
+  m_Mode: 1
+  m_RefreshMode: 2
   m_TimeSlicingMode: 0
   m_Resolution: 1024
   m_UpdateFrequency: 0
@@ -47968,7 +47925,8 @@ ReflectionProbe:
   m_RenderDynamicObjects: 0
   m_UseOcclusionCulling: 1
   m_Importance: 1
-  m_CustomBakedTexture: {fileID: 0}
+  m_CustomBakedTexture: {fileID: 8900000, guid: 06b91d7dcb09b474a8f8ac88ce10c495,
+    type: 3}
 --- !u!1001 &1966208726
 PrefabInstance:
   m_ObjectHideFlags: 0

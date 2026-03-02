@@ -32,6 +32,15 @@ public class EnergyVisualController : MonoBehaviour
     public float flickerAmount = 0.25f;
     public float flickerSpeed = 8f;
 
+    [Header("Reflection Probes (Optional)")]
+    public ReflectionProbe[] reflectionProbes;
+    [Range(0.5f, 10f)] public float probeRefreshSeconds = 2f;   // how often to refresh
+    [Range(0f, 5f)] public float energyRefreshDelta = 5f;       // refresh if energy changes by this much
+    public bool refreshProbes = true;
+
+    private float _nextProbeRefreshTime = 0f;
+    private float _lastProbeEnergy = -999f;
+
     float[] baseInteriorIntensities;
 
     // Skybox/Cubemap property names (Unity built-in)
@@ -69,11 +78,56 @@ public class EnergyVisualController : MonoBehaviour
 
         // Skybox Tint + Exposure
         var sky = RenderSettings.skybox;
+        bool skyChanged = false;
         if (sky != null)
         {
-            // Some skybox shaders use _Tint, which is correct for Skybox/Cubemap in most Unity versions.
-            sky.SetColor(SkyTintProp, Color.Lerp(skyLowEnergyTint, skyHighEnergyTint, t));
-            sky.SetFloat(SkyExposureProp, Mathf.Lerp(skyMinExposure, skyMaxExposure, t));
+            Color newTint = Color.Lerp(skyLowEnergyTint, skyHighEnergyTint, t);
+            float newExposure = Mathf.Lerp(skyMinExposure, skyMaxExposure, t);
+
+            // Only set if meaningfully different (avoids pointless work)
+            if (sky.GetColor(SkyTintProp) != newTint)
+            {
+                sky.SetColor(SkyTintProp, newTint);
+                skyChanged = true;
+            }
+
+            // Skybox/Cubemap uses _Exposure
+            if (!Mathf.Approximately(sky.GetFloat(SkyExposureProp), newExposure))
+            {
+                sky.SetFloat(SkyExposureProp, newExposure);
+                skyChanged = true;
+            }
+        }
+
+        // --- Reflection refresh (Option B) ---
+        // If you're using probes, they won't update unless you render them.
+        if (refreshProbes && reflectionProbes != null && reflectionProbes.Length > 0)
+        {
+            bool energyMovedEnough = Mathf.Abs(cleanEnergy - _lastProbeEnergy) >= energyRefreshDelta;
+            bool timeToRefresh = Time.time >= _nextProbeRefreshTime;
+
+            // Refresh when either:
+            // - Sky changed AND enough time passed, OR
+            // - Energy moved enough AND enough time passed
+            if ((skyChanged || energyMovedEnough) && timeToRefresh)
+            {
+                // Updates Unity's environment lighting/reflections derived from the skybox
+                DynamicGI.UpdateEnvironment();
+
+                // Re-render probes (expensive, so do it sparingly)
+                for (int i = 0; i < reflectionProbes.Length; i++)
+                {
+                    var p = reflectionProbes[i];
+                    if (p == null) continue;
+
+                    // Make sure each probe is set to Realtime in Inspector
+                    // and Refresh Mode is Via Scripting (recommended).
+                    p.RenderProbe();
+                }
+
+                _lastProbeEnergy = cleanEnergy;
+                _nextProbeRefreshTime = Time.time + probeRefreshSeconds;
+            }
         }
 
         // Interior flicker when energy is low
