@@ -13,7 +13,7 @@ public class EnergyVisualController : MonoBehaviour
 
     [Header("Skybox (Skybox/Cubemap)")]
     public float skyMinExposure = 0.05f;
-    public float skyMaxExposure = 1.00f;
+    public float skyMaxExposure = 0.80f;
     public Color skyLowEnergyTint = new Color(1.0f, 0.55f, 0.35f);   // orange-ish
     public Color skyHighEnergyTint = new Color(0.75f, 0.85f, 1.0f);  // subtle blue-ish
 
@@ -64,7 +64,7 @@ public class EnergyVisualController : MonoBehaviour
             sunDirectionalLight.color = Color.Lerp(sunLowEnergyColor, sunHighEnergyColor, t);
         }
 
-        // Ambient (works well since you set Ambient Mode to Realtime)
+        // Ambient 
         RenderSettings.ambientLight = Color.Lerp(ambientLow, ambientHigh, t);
 
         // Skybox Tint + Exposure
