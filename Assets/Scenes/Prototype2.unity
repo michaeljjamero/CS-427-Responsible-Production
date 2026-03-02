@@ -5711,7 +5711,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 2
   m_TimeSlicingMode: 0
   m_Resolution: 1024
@@ -8193,7 +8193,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 2
   m_TimeSlicingMode: 0
   m_Resolution: 1024
@@ -8582,7 +8582,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 2
   m_TimeSlicingMode: 0
   m_Resolution: 1024
@@ -11185,7 +11185,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 2
   m_TimeSlicingMode: 0
   m_Resolution: 1024
@@ -11250,7 +11250,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 2
   m_TimeSlicingMode: 0
   m_Resolution: 1024
@@ -11705,7 +11705,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 2
   m_TimeSlicingMode: 0
   m_Resolution: 1024
@@ -14967,7 +14967,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 2
   m_TimeSlicingMode: 0
   m_Resolution: 1024
@@ -17534,7 +17534,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 2
   m_TimeSlicingMode: 0
   m_Resolution: 1024
@@ -18072,7 +18072,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 2
   m_TimeSlicingMode: 0
   m_Resolution: 1024
@@ -18453,7 +18453,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 2
   m_TimeSlicingMode: 0
   m_Resolution: 1024
@@ -20390,7 +20390,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 2
   m_TimeSlicingMode: 0
   m_Resolution: 1024
@@ -24954,7 +24954,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 2
   m_TimeSlicingMode: 0
   m_Resolution: 1024
@@ -25066,7 +25066,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 2
   m_TimeSlicingMode: 0
   m_Resolution: 1024
@@ -31814,7 +31814,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 2
   m_TimeSlicingMode: 0
   m_Resolution: 1024
@@ -36861,7 +36861,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 2
   m_TimeSlicingMode: 0
   m_Resolution: 1024
@@ -43569,7 +43569,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 2
   m_TimeSlicingMode: 0
   m_Resolution: 1024
@@ -45002,7 +45002,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 2
   m_TimeSlicingMode: 0
   m_Resolution: 1024
@@ -47903,7 +47903,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 2
   m_TimeSlicingMode: 0
   m_Resolution: 1024
