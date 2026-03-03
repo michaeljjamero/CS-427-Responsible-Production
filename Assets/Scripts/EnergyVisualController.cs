@@ -32,6 +32,13 @@ public class EnergyVisualController : MonoBehaviour
     public float flickerAmount = 0.25f;
     public float flickerSpeed = 8f;
 
+    [Header("Bad Energy Smoke VFX")]
+    [Range(0, 100)] public float smokeThreshold = 40f;  // for the  smoke starts
+    public ParticleSystem[] smokeSystems;
+    public float minSmokeRate = 0f;
+    public float maxSmokeRate = 35f;
+    public bool stopSmokeWhenClean = true;
+
     float[] baseInteriorIntensities;
 
     // Skybox/Cubemap property names (Unity built-in)
@@ -52,7 +59,34 @@ public class EnergyVisualController : MonoBehaviour
                 baseInteriorIntensities[i] = interiorLightsToFlicker[i] ? interiorLightsToFlicker[i].intensity : 0f;
         }
     }
+    void UpdateSmoke(float cleanEnergyValue)
+    {
+        if (smokeSystems == null) return;
 
+         // 0 when clean, 1 when very bad
+        float bad = 1f - Mathf.InverseLerp(0f, smokeThreshold, cleanEnergyValue);
+        bad = Mathf.Clamp01(bad);
+
+        float rate = Mathf.Lerp(minSmokeRate, maxSmokeRate, bad);
+
+        for (int i = 0; i < smokeSystems.Length; i++)
+        {
+            var ps = smokeSystems[i];
+         if (ps == null) continue;
+
+            var em = ps.emission;
+            em.rateOverTimeMultiplier = rate;
+
+            if (bad > 0.01f)
+         {
+            if (!ps.isPlaying) ps.Play();
+            }
+         else
+         {
+            if (stopSmokeWhenClean && ps.isPlaying) ps.Stop();
+            }
+        }
+    }
     void Update()
     {
         float t = Mathf.Clamp01(cleanEnergy / 100f);
@@ -104,5 +138,7 @@ public class EnergyVisualController : MonoBehaviour
                 }
             }
         }
+
+        UpdateSmoke(cleanEnergy);
     }
 }
