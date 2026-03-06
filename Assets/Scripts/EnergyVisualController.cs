@@ -9,7 +9,7 @@ public class EnergyVisualController : MonoBehaviour
 
     [Header("References")]
     public Light sunDirectionalLight;
-    public Light[] interiorLightsToFlicker;
+    Light[] interiorLightsToFlicker;
 
     [Header("Skybox (Skybox/Cubemap)")]
     public float skyMinExposure = 0.05f;
@@ -44,12 +44,23 @@ public class EnergyVisualController : MonoBehaviour
         if (RenderSettings.skybox == null)
             Debug.LogWarning("No skybox material assigned in RenderSettings.");
 
-        // Cache interior light base intensities
-        if (interiorLightsToFlicker != null && interiorLightsToFlicker.Length > 0)
+        // Automatically find all point lights in the scene
+        Light[] allLights = FindObjectsOfType<Light>();
+        System.Collections.Generic.List<Light> filteredLights = new System.Collections.Generic.List<Light>();
+
+        foreach (Light l in allLights)
         {
-            baseInteriorIntensities = new float[interiorLightsToFlicker.Length];
-            for (int i = 0; i < interiorLightsToFlicker.Length; i++)
-                baseInteriorIntensities[i] = interiorLightsToFlicker[i] ? interiorLightsToFlicker[i].intensity : 0f;
+            if (l != null && l.type == LightType.Point)
+                filteredLights.Add(l);
+        }
+
+        interiorLightsToFlicker = filteredLights.ToArray();
+
+        // Cache base intensities
+        baseInteriorIntensities = new float[interiorLightsToFlicker.Length];
+        for (int i = 0; i < interiorLightsToFlicker.Length; i++)
+        {
+            baseInteriorIntensities[i] = interiorLightsToFlicker[i].intensity;
         }
     }
 
