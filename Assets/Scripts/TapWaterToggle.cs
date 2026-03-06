@@ -3,11 +3,11 @@
 public class TapWaterToggle : MonoBehaviour
 {
     [Header("Toggle Targets")]
-    [SerializeField] private GameObject waterGroup;   // Drag: Kitchen Sink H2O
-    [SerializeField] private GameObject h2oType;      // Drag: your H2O text/typography object
+    [SerializeField] private GameObject waterGroup;
+    [SerializeField] private GameObject h2oType;
 
     [Header("Click Settings")]
-    [SerializeField] private Camera cam;              // Optional (leave empty to use MainCamera)
+    [SerializeField] private Camera cam;
 
     private bool isOn = false;
 
@@ -27,15 +27,20 @@ public class TapWaterToggle : MonoBehaviour
         if (cam == null) return;
 
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+
         if (Physics.Raycast(ray, out RaycastHit hit, 1000f))
         {
-            // Clicked tap or any child mesh of tap
             if (hit.transform == transform || hit.transform.IsChildOf(transform))
             {
                 isOn = !isOn;
 
-                if (waterGroup != null) waterGroup.SetActive(isOn);
-                if (h2oType != null) h2oType.SetActive(isOn);
+                // Water toggles normally
+                if (waterGroup != null)
+                    waterGroup.SetActive(isOn);
+
+                // Text appears once and stays
+                if (isOn && h2oType != null)
+                    h2oType.SetActive(true);
             }
         }
     }
