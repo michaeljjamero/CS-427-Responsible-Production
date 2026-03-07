@@ -39297,7 +39297,7 @@ MonoBehaviour:
   sunHighEnergyColor: {r: 1, g: 0.98, b: 0.9, a: 1}
   enableFog: 1
   fogMinDensity: 0.0005
-  fogMaxDensity: 0.04
+  fogMaxDensity: 0.2
   fogLowEnergyColor: {r: 0.6, g: 0.6, b: 0.6, a: 1}
   fogHighEnergyColor: {r: 0.9, g: 0.9, b: 1, a: 1}
   ambientLow: {r: 0.18, g: 0.18, b: 0.18, a: 1}
