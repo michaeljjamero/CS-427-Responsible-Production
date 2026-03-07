@@ -23,6 +23,15 @@ public class EnergyVisualController : MonoBehaviour
     public Color sunLowEnergyColor = new Color(1.0f, 0.60f, 0.40f);  // warm
     public Color sunHighEnergyColor = new Color(1.0f, 0.98f, 0.90f); // near-white
 
+    [Header("Fog")]
+    public bool enableFog = true;
+
+    public float fogMinDensity = 0.0005f;   // clear air
+    public float fogMaxDensity = 0.04f;     // heavy fog
+
+    public Color fogLowEnergyColor = new Color(0.6f,0.6f,0.6f);
+    public Color fogHighEnergyColor = new Color(0.9f,0.9f,1f);
+
     [Header("Ambient")]
     public Color ambientLow = new Color(0.05f, 0.05f, 0.05f);
     public Color ambientHigh = new Color(0.70f, 0.70f, 0.70f);
@@ -54,6 +63,10 @@ public class EnergyVisualController : MonoBehaviour
                 filteredLights.Add(l);
         }
 
+        // Enable fog
+        RenderSettings.fog = enableFog;
+
+        // Flickering lights
         interiorLightsToFlicker = filteredLights.ToArray();
 
         // Cache base intensities
@@ -73,6 +86,15 @@ public class EnergyVisualController : MonoBehaviour
         {
             sunDirectionalLight.intensity = Mathf.Lerp(sunMinIntensity, sunMaxIntensity, t);
             sunDirectionalLight.color = Color.Lerp(sunLowEnergyColor, sunHighEnergyColor, t);
+        }
+
+        // Fog reacts to energy
+        if (enableFog)
+        {
+            RenderSettings.fogColor = Color.Lerp(fogLowEnergyColor, fogHighEnergyColor, t);
+
+            // Reverse interpolation so fog is strongest at low energy
+            RenderSettings.fogDensity = Mathf.Lerp(fogMaxDensity, fogMinDensity, t);
         }
 
         // Ambient 
