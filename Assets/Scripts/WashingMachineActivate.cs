@@ -18,6 +18,11 @@ public class WashingMachineActivate : MonoBehaviour
     [SerializeField] private float wobbleAngle = 3f;
     [SerializeField] private float wobbleSpeed = 6f;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip clickSound;
+    [SerializeField] private AudioClip washingLoop;
+
     private bool isOn = false;
     private Quaternion originalRotation;
     private Coroutine wobbleRoutine;
@@ -56,6 +61,10 @@ public class WashingMachineActivate : MonoBehaviour
     {
         isOn = !isOn;
 
+        // play click
+        if (audioSource != null && clickSound != null)
+            audioSource.PlayOneShot(clickSound);
+
         if (towel != null) towel.SetActive(isOn);
         if (basket != null) basket.SetActive(isOn);
 
@@ -64,11 +73,21 @@ public class WashingMachineActivate : MonoBehaviour
 
         if (isOn)
         {
+            if (audioSource != null && washingLoop != null)
+            {
+                audioSource.clip = washingLoop;
+                audioSource.loop = true;
+                audioSource.Play();
+            }
+
             if (wobbleRoutine == null)
                 wobbleRoutine = StartCoroutine(WobbleMachine());
         }
         else
         {
+            if (audioSource != null)
+                audioSource.Stop();
+
             if (wobbleRoutine != null)
             {
                 StopCoroutine(wobbleRoutine);

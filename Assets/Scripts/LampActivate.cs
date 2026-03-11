@@ -11,6 +11,10 @@ public class LampActivate : MonoBehaviour
     [Header("Click Settings")]
     [SerializeField] private Camera cam;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip clickSound;
+
     private bool isOn = false;
 
     void Start()
@@ -35,6 +39,12 @@ public class LampActivate : MonoBehaviour
             if (hit.transform == transform || hit.transform.IsChildOf(transform))
             {
                 isOn = !isOn;
+
+                // Play click sound
+                if (audioSource != null && clickSound != null)
+                {
+                    audioSource.PlayOneShot(clickSound);
+                }
 
                 // Water toggles normally
                 if (Lamplight != null)
