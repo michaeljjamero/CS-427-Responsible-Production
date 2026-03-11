@@ -13,6 +13,8 @@ public class FridgeOpeningScript : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip openSound;
     [SerializeField] private AudioClip closeSound;
+    [SerializeField] private float openVolume = 1.0f;
+    [SerializeField] private float closeVolume = 1.0f;
 
     private bool isOpen = false;
 
@@ -35,7 +37,7 @@ public class FridgeOpeningScript : MonoBehaviour
             if (hit.transform == transform || hit.transform.IsChildOf(transform))
             {
                 isOpen = !isOpen;
-                
+
                 if (isOpen)
                 {
                     // play open sound
