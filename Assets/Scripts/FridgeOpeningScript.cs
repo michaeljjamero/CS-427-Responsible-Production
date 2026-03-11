@@ -9,6 +9,11 @@ public class FridgeOpeningScript : MonoBehaviour
     [Header("Click Settings")]
     [SerializeField] private Camera cam;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip openSound;
+    [SerializeField] private AudioClip closeSound;
+
     private bool isOpen = false;
 
     void Start()
@@ -30,7 +35,19 @@ public class FridgeOpeningScript : MonoBehaviour
             if (hit.transform == transform || hit.transform.IsChildOf(transform))
             {
                 isOpen = !isOpen;
-
+                
+                if (isOpen)
+                {
+                    // play open sound
+                    if (audioSource != null && openSound != null)
+                        audioSource.PlayOneShot(openSound);
+                }
+                else
+                {
+                    // play close sound
+                    if (audioSource != null && closeSound != null)
+                        audioSource.PlayOneShot(closeSound);
+                }
                 // door toggles
                 if (fridgeDoor != null) fridgeDoor.SetActive(isOpen);
 
