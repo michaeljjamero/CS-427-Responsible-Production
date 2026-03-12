@@ -2627,9 +2627,43 @@ MonoBehaviour:
   m_GameObject: {fileID: 73346025}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04128d5101065924cba28a7b93056240, type: 3}
+  m_Script: {fileID: 11500000, guid: b7498b2e60356394ea441f2f7658c47f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  points:
+  - {fileID: 350709735}
+  - {fileID: 1439346915}
+  - {fileID: 37272111}
+  - {fileID: 1866506413}
+  - {fileID: 728037497}
+  - {fileID: 2070081328}
+  - {fileID: 1923522495}
+  - {fileID: 332191327}
+  - {fileID: 451743901}
+  - {fileID: 1745781671}
+  - {fileID: 1733506349}
+  - {fileID: 2105683024}
+  - {fileID: 1579757145}
+  - {fileID: 1338648787}
+  - {fileID: 1592483732}
+  - {fileID: 1259102369}
+  - {fileID: 2023606655}
+  - {fileID: 1806567575}
+  - {fileID: 1614069104}
+  - {fileID: 1372102931}
+  - {fileID: 945765532}
+  - {fileID: 75070409}
+  - {fileID: 1825274263}
+  textPrefab: {fileID: 708661171}
+  textCount: 3
+  displayText: CLEAN ENERGY
+  speed: 2
+  spacing: 2.5
+  textYOffset: 0
+  faceCamera: 1
+  colorA: {r: 0, g: 0.6, b: 1, a: 1}
+  colorB: {r: 0, g: 1, b: 1, a: 1}
+  pulseSpeed: 2
 --- !u!120 &73346027
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -2773,9 +2807,43 @@ MonoBehaviour:
   m_GameObject: {fileID: 73346025}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7498b2e60356394ea441f2f7658c47f, type: 3}
+  m_Script: {fileID: 11500000, guid: e77c45c4763186847ada02db5fadb29d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  points:
+  - {fileID: 350709735}
+  - {fileID: 1439346915}
+  - {fileID: 37272111}
+  - {fileID: 1866506413}
+  - {fileID: 728037497}
+  - {fileID: 2070081328}
+  - {fileID: 1923522495}
+  - {fileID: 332191327}
+  - {fileID: 451743901}
+  - {fileID: 1745781671}
+  - {fileID: 1733506349}
+  - {fileID: 2105683024}
+  - {fileID: 1579757145}
+  - {fileID: 1338648787}
+  - {fileID: 1592483732}
+  - {fileID: 1259102369}
+  - {fileID: 2023606655}
+  - {fileID: 1806567575}
+  - {fileID: 1614069104}
+  - {fileID: 1372102931}
+  - {fileID: 945765532}
+  - {fileID: 75070409}
+  - {fileID: 1825274263}
+  line: {fileID: 73346027}
+  yOffset: 0.03
+  colorA: {r: 0.1, g: 0.7, b: 1, a: 1}
+  colorB: {r: 0.6, g: 1, b: 1, a: 1}
+  pulseSpeed: 2
+  minWidth: 0.06
+  maxWidth: 0.12
+  widthPulseSpeed: 2
+  animateTexture: 1
+  textureScrollSpeed: 1
 --- !u!1 &75070408
 GameObject:
   m_ObjectHideFlags: 0
@@ -52563,8 +52631,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1332000514}
   - component: {fileID: 1332000513}
-  - component: {fileID: 1332000512}
   - component: {fileID: 1332000511}
+  - component: {fileID: 1332000512}
   m_Layer: 0
   m_Name: CleanEnergyPath_washer&TVwing
   m_TagString: Untagged
@@ -52584,7 +52652,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e77c45c4763186847ada02db5fadb29d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: []
+  points:
+  - {fileID: 729036615}
+  - {fileID: 2122477325}
+  - {fileID: 357972460}
+  - {fileID: 1780706094}
+  - {fileID: 777267728}
+  - {fileID: 143997861}
+  - {fileID: 427982549}
   line: {fileID: 0}
   yOffset: 0.03
   colorA: {r: 0.1, g: 0.7, b: 1, a: 1}
@@ -52604,20 +52679,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1332000510}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e77c45c4763186847ada02db5fadb29d, type: 3}
+  m_Script: {fileID: 11500000, guid: b7498b2e60356394ea441f2f7658c47f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: []
-  line: {fileID: 0}
-  yOffset: 0.03
-  colorA: {r: 0.1, g: 0.7, b: 1, a: 1}
-  colorB: {r: 0.6, g: 1, b: 1, a: 1}
+  points:
+  - {fileID: 729036615}
+  - {fileID: 2122477325}
+  - {fileID: 357972460}
+  - {fileID: 1780706094}
+  - {fileID: 777267728}
+  - {fileID: 143997861}
+  - {fileID: 427982549}
+  textPrefab: {fileID: 1623416120}
+  textCount: 3
+  displayText: CLEAN ENERGY
+  speed: 2
+  spacing: 2.5
+  textYOffset: 0
+  faceCamera: 1
+  colorA: {r: 0, g: 0.6, b: 1, a: 1}
+  colorB: {r: 0, g: 1, b: 1, a: 1}
   pulseSpeed: 2
-  minWidth: 0.06
-  maxWidth: 0.12
-  widthPulseSpeed: 2
-  animateTexture: 1
-  textureScrollSpeed: 1
 --- !u!120 &1332000513
 LineRenderer:
   m_ObjectHideFlags: 0
