@@ -9,7 +9,7 @@ public class EnergyVisualController : MonoBehaviour
 
     [Header("References")]
     public Light sunDirectionalLight;
-    public Light[] interiorLightsToFlicker;
+    Light[] interiorLightsToFlicker;
 
     [Header("Skybox (Skybox/Cubemap)")]
     public float skyMinExposure = 0.05f;
@@ -23,6 +23,15 @@ public class EnergyVisualController : MonoBehaviour
     public Color sunLowEnergyColor = new Color(1.0f, 0.60f, 0.40f);  // warm
     public Color sunHighEnergyColor = new Color(1.0f, 0.98f, 0.90f); // near-white
 
+    [Header("Fog")]
+    public bool enableFog = true;
+
+    public float fogMinDensity = 0.0005f;   // clear air
+    public float fogMaxDensity = 0.04f;     // heavy fog
+
+    public Color fogLowEnergyColor = new Color(0.6f,0.6f,0.6f);
+    public Color fogHighEnergyColor = new Color(0.9f,0.9f,1f);
+
     [Header("Ambient")]
     public Color ambientLow = new Color(0.05f, 0.05f, 0.05f);
     public Color ambientHigh = new Color(0.70f, 0.70f, 0.70f);
@@ -31,13 +40,6 @@ public class EnergyVisualController : MonoBehaviour
     [Range(0, 100)] public float flickerThreshold = 30f;
     public float flickerAmount = 0.25f;
     public float flickerSpeed = 8f;
-
-    [Header("Bad Energy Smoke VFX")]
-    [Range(0, 100)] public float smokeThreshold = 40f;  // for the  smoke starts
-    public ParticleSystem[] smokeSystems;
-    public float minSmokeRate = 0f;
-    public float maxSmokeRate = 35f;
-    public bool stopSmokeWhenClean = true;
 
     float[] baseInteriorIntensities;
 
@@ -51,42 +53,30 @@ public class EnergyVisualController : MonoBehaviour
         if (RenderSettings.skybox == null)
             Debug.LogWarning("No skybox material assigned in RenderSettings.");
 
-        // Cache interior light base intensities
-        if (interiorLightsToFlicker != null && interiorLightsToFlicker.Length > 0)
+        // Automatically find all point lights in the scene
+        Light[] allLights = FindObjectsOfType<Light>();
+        System.Collections.Generic.List<Light> filteredLights = new System.Collections.Generic.List<Light>();
+
+        foreach (Light l in allLights)
         {
-            baseInteriorIntensities = new float[interiorLightsToFlicker.Length];
-            for (int i = 0; i < interiorLightsToFlicker.Length; i++)
-                baseInteriorIntensities[i] = interiorLightsToFlicker[i] ? interiorLightsToFlicker[i].intensity : 0f;
+            if (l != null && l.type == LightType.Point)
+                filteredLights.Add(l);
+        }
+
+        // Enable fog
+        RenderSettings.fog = enableFog;
+
+        // Flickering lights
+        interiorLightsToFlicker = filteredLights.ToArray();
+
+        // Cache base intensities
+        baseInteriorIntensities = new float[interiorLightsToFlicker.Length];
+        for (int i = 0; i < interiorLightsToFlicker.Length; i++)
+        {
+            baseInteriorIntensities[i] = interiorLightsToFlicker[i].intensity;
         }
     }
-    void UpdateSmoke(float cleanEnergyValue)
-    {
-        if (smokeSystems == null) return;
 
-         // 0 when clean, 1 when very bad
-        float bad = 1f - Mathf.InverseLerp(0f, smokeThreshold, cleanEnergyValue);
-        bad = Mathf.Clamp01(bad);
-
-        float rate = Mathf.Lerp(minSmokeRate, maxSmokeRate, bad);
-
-        for (int i = 0; i < smokeSystems.Length; i++)
-        {
-            var ps = smokeSystems[i];
-         if (ps == null) continue;
-
-            var em = ps.emission;
-            em.rateOverTimeMultiplier = rate;
-
-            if (bad > 0.01f)
-         {
-            if (!ps.isPlaying) ps.Play();
-            }
-         else
-         {
-            if (stopSmokeWhenClean && ps.isPlaying) ps.Stop();
-            }
-        }
-    }
     void Update()
     {
         float t = Mathf.Clamp01(cleanEnergy / 100f);
@@ -96,6 +86,15 @@ public class EnergyVisualController : MonoBehaviour
         {
             sunDirectionalLight.intensity = Mathf.Lerp(sunMinIntensity, sunMaxIntensity, t);
             sunDirectionalLight.color = Color.Lerp(sunLowEnergyColor, sunHighEnergyColor, t);
+        }
+
+        // Fog reacts to energy
+        if (enableFog)
+        {
+            RenderSettings.fogColor = Color.Lerp(fogLowEnergyColor, fogHighEnergyColor, t);
+
+            // Reverse interpolation so fog is strongest at low energy
+            RenderSettings.fogDensity = Mathf.Lerp(fogMaxDensity, fogMinDensity, t);
         }
 
         // Ambient 
@@ -138,7 +137,5 @@ public class EnergyVisualController : MonoBehaviour
                 }
             }
         }
-
-        UpdateSmoke(cleanEnergy);
     }
 }
