@@ -9,7 +9,7 @@ public class EnergyVisualController : MonoBehaviour
 
     [Header("References")]
     public Light sunDirectionalLight;
-    public Light[] interiorLightsToFlicker;
+    Light[] interiorLightsToFlicker;
 
     [Header("Skybox (Skybox/Cubemap)")]
     public float skyMinExposure = 0.05f;
@@ -22,6 +22,15 @@ public class EnergyVisualController : MonoBehaviour
     public float sunMaxIntensity = 0.90f;
     public Color sunLowEnergyColor = new Color(1.0f, 0.60f, 0.40f);  // warm
     public Color sunHighEnergyColor = new Color(1.0f, 0.98f, 0.90f); // near-white
+
+    [Header("Fog")]
+    public bool enableFog = true;
+
+    public float fogMinDensity = 0.0005f;   // clear air
+    public float fogMaxDensity = 0.04f;     // heavy fog
+
+    public Color fogLowEnergyColor = new Color(0.6f,0.6f,0.6f);
+    public Color fogHighEnergyColor = new Color(0.9f,0.9f,1f);
 
     [Header("Ambient")]
     public Color ambientLow = new Color(0.05f, 0.05f, 0.05f);
@@ -44,12 +53,27 @@ public class EnergyVisualController : MonoBehaviour
         if (RenderSettings.skybox == null)
             Debug.LogWarning("No skybox material assigned in RenderSettings.");
 
-        // Cache interior light base intensities
-        if (interiorLightsToFlicker != null && interiorLightsToFlicker.Length > 0)
+        // Automatically find all point lights in the scene
+        Light[] allLights = FindObjectsOfType<Light>();
+        System.Collections.Generic.List<Light> filteredLights = new System.Collections.Generic.List<Light>();
+
+        foreach (Light l in allLights)
         {
-            baseInteriorIntensities = new float[interiorLightsToFlicker.Length];
-            for (int i = 0; i < interiorLightsToFlicker.Length; i++)
-                baseInteriorIntensities[i] = interiorLightsToFlicker[i] ? interiorLightsToFlicker[i].intensity : 0f;
+            if (l != null && l.type == LightType.Point)
+                filteredLights.Add(l);
+        }
+
+        // Enable fog
+        RenderSettings.fog = enableFog;
+
+        // Flickering lights
+        interiorLightsToFlicker = filteredLights.ToArray();
+
+        // Cache base intensities
+        baseInteriorIntensities = new float[interiorLightsToFlicker.Length];
+        for (int i = 0; i < interiorLightsToFlicker.Length; i++)
+        {
+            baseInteriorIntensities[i] = interiorLightsToFlicker[i].intensity;
         }
     }
 
@@ -62,6 +86,15 @@ public class EnergyVisualController : MonoBehaviour
         {
             sunDirectionalLight.intensity = Mathf.Lerp(sunMinIntensity, sunMaxIntensity, t);
             sunDirectionalLight.color = Color.Lerp(sunLowEnergyColor, sunHighEnergyColor, t);
+        }
+
+        // Fog reacts to energy
+        if (enableFog)
+        {
+            RenderSettings.fogColor = Color.Lerp(fogLowEnergyColor, fogHighEnergyColor, t);
+
+            // Reverse interpolation so fog is strongest at low energy
+            RenderSettings.fogDensity = Mathf.Lerp(fogMaxDensity, fogMinDensity, t);
         }
 
         // Ambient 
