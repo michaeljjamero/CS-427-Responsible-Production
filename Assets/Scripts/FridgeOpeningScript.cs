@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class FridgeOpeningScript : MonoBehaviour
 {
     [Header("Toggle Targets")]
     [SerializeField] private GameObject fridgeDoor;
     [SerializeField] private GameObject vocType;
+    [SerializeField] private GameObject vocTypeLarge;
 
     [Header("Click Settings")]
     [SerializeField] private Camera cam;
@@ -16,7 +18,12 @@ public class FridgeOpeningScript : MonoBehaviour
     [SerializeField] private float openVolume = 1.0f;
     [SerializeField] private float closeVolume = 1.0f;
 
+    [Header("Large Text Animation")]
+    [SerializeField] private float floatDistance = 2f;
+    [SerializeField] private float duration = 4f;
+
     private bool isOpen = false;
+    private bool largeTextPlayed = false;
 
     void Start()
     {
@@ -24,6 +31,7 @@ public class FridgeOpeningScript : MonoBehaviour
 
         if (fridgeDoor != null) fridgeDoor.SetActive(false);
         if (vocType != null) vocType.SetActive(false);
+        if (vocTypeLarge != null) vocTypeLarge.SetActive(false);
     }
 
     void Update()
@@ -40,25 +48,50 @@ public class FridgeOpeningScript : MonoBehaviour
 
                 if (isOpen)
                 {
-                    // play open sound
                     if (audioSource != null && openSound != null)
-                        audioSource.PlayOneShot(openSound);
+                        audioSource.PlayOneShot(openSound, openVolume);
                 }
                 else
                 {
-                    // play close sound
                     if (audioSource != null && closeSound != null)
-                        audioSource.PlayOneShot(closeSound);
+                        audioSource.PlayOneShot(closeSound, closeVolume);
                 }
-                // door toggles
+
                 if (fridgeDoor != null) fridgeDoor.SetActive(isOpen);
 
-                // VOC appears once and stays
                 if (isOpen && vocType != null)
-                {
                     vocType.SetActive(true);
+
+                // Large VOC text appears once and floats upward
+                if (isOpen && vocTypeLarge != null && !largeTextPlayed)
+                {
+                    largeTextPlayed = true;
+                    StartCoroutine(FloatLargeText());
                 }
             }
         }
+    }
+
+    IEnumerator FloatLargeText()
+    {
+        vocTypeLarge.SetActive(true);
+
+        Vector3 startPos = vocTypeLarge.transform.position;
+        Vector3 endPos = startPos + Vector3.up * floatDistance;
+
+        float t = 0f;
+
+        while (t < duration)
+        {
+            t += Time.deltaTime;
+            float p = Mathf.SmoothStep(0f, 1f, t / duration);
+
+            vocTypeLarge.transform.position = Vector3.Lerp(startPos, endPos, p);
+
+            yield return null;
+        }
+
+        vocTypeLarge.SetActive(false);
+        vocTypeLarge.transform.position = startPos;
     }
 }
