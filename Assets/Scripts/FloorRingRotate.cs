@@ -3,7 +3,11 @@
 public class FloorRingRotate : MonoBehaviour
 {
     [SerializeField] private Transform ringRoot;      // Drag: Generator Text
-    [SerializeField] private float speed = 10f;
+    [SerializeField] private EnergyVisualController energyController;
+
+    [Header("Rotation")]
+    [SerializeField] private float minSpeed = 10f;
+    [SerializeField] private float maxSpeed = 100f;
 
     void Start()
     {
@@ -31,6 +35,15 @@ public class FloorRingRotate : MonoBehaviour
 
     void Update()
     {
-        transform.Rotate(0f, speed * Time.deltaTime, 0f, Space.Self);
+        float currentSpeed = minSpeed;
+
+        if (energyController != null)
+        {
+            float cleanEnergyPercent = energyController.cleanEnergy / 100f;
+            cleanEnergyPercent = Mathf.Clamp01(cleanEnergyPercent);
+            currentSpeed = Mathf.Lerp(minSpeed, maxSpeed, cleanEnergyPercent);
+        }
+
+        transform.Rotate(0f, -currentSpeed * Time.deltaTime, 0f, Space.Self);
     }
 }

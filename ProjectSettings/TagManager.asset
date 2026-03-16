@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - CH4
+  - H2O
+  - VOC
+  - KWH
+  - CO2
   layers:
   - Default
   - TransparentFX
