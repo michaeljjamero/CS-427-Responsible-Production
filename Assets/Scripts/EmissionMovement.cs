@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
 
 public class EmissionMovement : MonoBehaviour
 {
@@ -8,18 +7,14 @@ public class EmissionMovement : MonoBehaviour
     [SerializeField] private EnergyVisualController energyController;
 
     [Header("Movement")]
-    [SerializeField] private float baseSpeed = 0.75f;
-    [SerializeField] private float maxHeight = 1.5f;
-
-    [Header("Optional")]
-    [SerializeField] private bool hideAtMaxCleanEnergy = true;
-    [SerializeField] private float minVisibleStrength = 0.05f;
+    [SerializeField] private float baseSpeed = 2.0f;
+    [SerializeField] private float maxHeight = 3.0f;
 
     private Vector3 startPos;
 
     private void Start()
     {
-        startPos = transform.localPosition;
+        startPos = transform.position;
     }
 
     private void Update()
@@ -27,28 +22,19 @@ public class EmissionMovement : MonoBehaviour
         if (energyController == null) return;
 
         float t = Mathf.Clamp01(energyController.cleanEnergy / 100f);
-
-        // full emissions at low clean energy, less emissions at high clean energy
         float emissionStrength = 1f - t;
 
-        // hide completely when clean energy is high
-        if (hideAtMaxCleanEnergy && emissionStrength <= minVisibleStrength)
-        {
-            gameObject.SetActive(false);
-            return;
-        }
-        else if (!gameObject.activeSelf)
-        {
-            gameObject.SetActive(true);
-        }
+        float currentSpeed = baseSpeed * Mathf.Max(emissionStrength, 0.1f);
+        transform.position += Vector3.up * currentSpeed * Time.deltaTime;
 
-        float currentSpeed = baseSpeed * emissionStrength;
-
-        transform.localPosition += Vector3.up * currentSpeed * Time.deltaTime;
-
-        if (transform.localPosition.y >= startPos.y + maxHeight)
+        if (transform.position.y >= startPos.y + maxHeight)
         {
-            transform.localPosition = startPos;
+            Destroy(gameObject);
         }
+    }
+
+    public void SetEnergyController(EnergyVisualController controller)
+    {
+        energyController = controller;
     }
 }
