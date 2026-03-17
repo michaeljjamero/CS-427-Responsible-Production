@@ -67407,7 +67407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a6d05a65b597f143b1e8c49bca7a9f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cleanEnergy: 100
+  cleanEnergy: 50
   sunDirectionalLight: {fileID: 741303246}
   skyMinExposure: 0.01
   skyMaxExposure: 0.8
