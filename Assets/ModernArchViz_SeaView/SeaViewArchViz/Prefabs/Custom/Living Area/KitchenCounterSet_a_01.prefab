@@ -280,6 +280,7 @@ GameObject:
   - component: {fileID: 4872201505668410}
   - component: {fileID: 33456981692416664}
   - component: {fileID: 23566897720487200}
+  - component: {fileID: 8740692682095359390}
   m_Layer: 0
   m_Name: Tap_a_01
   m_TagString: Untagged
@@ -347,6 +348,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &8740692682095359390
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550440664968110}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.12155461, y: 0.27671874, z: 0.30357528}
+  m_Center: {x: -0.04423166, y: 0.13835955, z: 0.012268759}
 --- !u!1 &1787811916421572
 GameObject:
   m_ObjectHideFlags: 0
