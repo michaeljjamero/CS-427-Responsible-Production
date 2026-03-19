@@ -67404,25 +67404,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1325506763}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a6d05a65b597f143b1e8c49bca7a9f3, type: 3}
+  m_Script: {fileID: 11500000, guid: e601216cd3f485a4cbe9e83d5de7aa20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cleanEnergy: 50
-  sunDirectionalLight: {fileID: 741303246}
-  skyMinExposure: 0.01
+  cleanEnergy: 0
+  sunDirectionalLight: {fileID: 0}
+  skyMinExposure: 0.05
   skyMaxExposure: 0.8
-  skyLowEnergyTint: {r: 1, g: 0.48850012, b: 0, a: 1}
+  skyLowEnergyTint: {r: 1, g: 0.55, b: 0.35, a: 1}
   skyHighEnergyTint: {r: 0.75, g: 0.85, b: 1, a: 1}
-  sunMinIntensity: 0
-  sunMaxIntensity: 1.1
+  sunMinIntensity: 0.2
+  sunMaxIntensity: 0.9
   sunLowEnergyColor: {r: 1, g: 0.6, b: 0.4, a: 1}
   sunHighEnergyColor: {r: 1, g: 0.98, b: 0.9, a: 1}
   enableFog: 1
   fogMinDensity: 0.0005
-  fogMaxDensity: 0.2
+  fogMaxDensity: 0.04
   fogLowEnergyColor: {r: 0.6, g: 0.6, b: 0.6, a: 1}
   fogHighEnergyColor: {r: 0.9, g: 0.9, b: 1, a: 1}
-  ambientLow: {r: 0.18, g: 0.18, b: 0.18, a: 1}
+  ambientLow: {r: 0.05, g: 0.05, b: 0.05, a: 1}
   ambientHigh: {r: 0.7, g: 0.7, b: 0.7, a: 1}
   flickerThreshold: 30
   flickerAmount: 0.25
