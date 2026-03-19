@@ -138,4 +138,9 @@ public class EnergyVisualController : MonoBehaviour
             }
         }
     }
+
+    public void SetCleanEnergy(float value)
+    {
+        cleanEnergy = Mathf.Clamp(value, 0f, 100f);
+    }
 }
