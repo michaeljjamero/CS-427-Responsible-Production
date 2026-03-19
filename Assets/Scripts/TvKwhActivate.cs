@@ -64,7 +64,7 @@ public class TvKwhActivate : MonoBehaviour
     void Update()
     {
         bool mouseClick = Input.GetMouseButtonDown(0);
-        bool caveClick = CAVE2.GetButtonDown(CAVE2.Button.Button7); // trigger (recommended)
+        bool caveClick = CAVE2.GetButtonDown(CAVE2.Button.Button7); // trigger 
 
         if (!(mouseClick || caveClick))
             return;
@@ -77,15 +77,15 @@ public class TvKwhActivate : MonoBehaviour
 
         if (caveClick && controller != null)
         {
-            // CAVE2 → wand ray
+            // CAVE2 = wand ray
             ray = new Ray(controller.position, controller.forward);
 
-            // Debug ray (helps visualize direction)
+            // ray 
             Debug.DrawRay(controller.position, controller.forward * rayDistance, Color.red, 1f);
         }
         else
         {
-            // Desktop → mouse ray
+            // Desktop
             ray = cam.ScreenPointToRay(Input.mousePosition);
         }
 
