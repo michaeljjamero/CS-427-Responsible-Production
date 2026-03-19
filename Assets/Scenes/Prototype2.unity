@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 8900000, guid: 06b91d7dcb09b474a8f8ac88ce10c495, type: 3}
   m_Sun: {fileID: 741303246}
-  m_IndirectSpecularColor: {r: 0.73996335, g: 0.82496774, b: 0.90262175, a: 1}
+  m_IndirectSpecularColor: {r: 0.74023134, g: 0.8252418, b: 0.9028876, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -98,7 +98,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
-  m_LightingDataAsset: {fileID: 112000000, guid: df55e10c948e68c4bb65965480e68b24,
+  m_LightingDataAsset: {fileID: 112000000, guid: c005095047d1947ca891270ac11f67eb,
     type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -38994,6 +38994,8 @@ MonoBehaviour:
   bigKwh: {fileID: 906771531}
   kwhGroup: {fileID: 337359720}
   cam: {fileID: 0}
+  controller: {fileID: 952060651}
+  rayDistance: 1000
   audioSource: {fileID: 751608562}
   clickSound: {fileID: 8300000, guid: 1a1522753b1629342a2fcaa3df5e9930, type: 3}
   bigKwhDelay: 0.2
@@ -39019,6 +39021,38 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.011200002, y: 0.0066117174, z: 0.0006342702}
   m_Center: {x: 0.00000075344013, y: 0.000054918928, z: -0.00009017578}
+--- !u!114 &751608560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751608555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25b0ad1210f5dd74f81a562fa78666b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wandPointing: 0
+  wandTouching: 0
+  grabbed: 0
+  grabButton: 2
+  grabStyle: 0
+  holdInteraction: 1
+  allowWandCollision: 1
+  centerOnWand: 0
+  constraints: 0
+  grabber: {fileID: 0}
+  showPointingOver: 1
+  highlightScaler: 1.05
+  defaultMesh: {fileID: 0}
+  useSimplifiedMesh: 0
+  simpleMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  pointingOverMaterial: {fileID: 2100000, guid: 2a6e178022e90be498acb517c9f1a51c,
+    type: 2}
+  showTouchingOver: 1
+  touchingOverMaterial: {fileID: 2100000, guid: 2a6e178022e90be498acb517c9f1a51c,
+    type: 2}
 --- !u!82 &751608562
 AudioSource:
   m_ObjectHideFlags: 0
@@ -45505,6 +45539,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4968409049039318, guid: 83591e793431d714c91f6dc0e82a6ec4,
     type: 3}
   m_PrefabInstance: {fileID: 950233334}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &952060651 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4000010099233380, guid: c1621f4dd1e8c2748a5a423aa7736d55,
+    type: 3}
+  m_PrefabInstance: {fileID: 927672022}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &952135647
 PrefabInstance:
