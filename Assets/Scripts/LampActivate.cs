@@ -173,4 +173,19 @@ public class LampActivate : MonoBehaviour
         if (bigKwh != null)
             bigKwh.transform.localPosition = bigKwhStartPos;
     }
+
+    public void TriggerFromZone()
+    {
+        if (isOn || isAnimating) return;
+
+        isOn = true;
+
+        if (audioSource != null && clickSound != null)
+            audioSource.PlayOneShot(clickSound);
+
+        if (lampRoutine != null)
+            StopCoroutine(lampRoutine);
+
+        lampRoutine = StartCoroutine(TurnOnSequence());
+    }
 }
