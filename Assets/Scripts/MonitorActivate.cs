@@ -192,4 +192,20 @@ public class MonitorActivate : MonoBehaviour
         if (bigKwh != null)
             bigKwh.transform.localPosition = bigKwhStartPos;
     }
+
+
+    public void TriggerFromZone()
+    {
+        if (isOn || isAnimating) return;
+
+        isOn = true;
+
+        if (audioSource != null && clickSound != null)
+            audioSource.PlayOneShot(clickSound);
+
+        if (monitorRoutine != null)
+            StopCoroutine(monitorRoutine);
+
+        monitorRoutine = StartCoroutine(TurnOnSequence());
+    }
 }
