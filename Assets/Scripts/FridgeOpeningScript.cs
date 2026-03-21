@@ -11,6 +11,10 @@ public class FridgeOpeningScript : MonoBehaviour
     [Header("Click Settings")]
     [SerializeField] private Camera cam;
 
+    [Header("CAVE2 Settings")]
+    [SerializeField] private Transform controller; // assign wand here
+    [SerializeField] private float rayDistance = 100f;
+
     [Header("Audio")]
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip openSound;
@@ -36,39 +40,65 @@ public class FridgeOpeningScript : MonoBehaviour
 
     void Update()
     {
-        if (!Input.GetMouseButtonDown(0)) return;
+        // Dual input support
+        bool mouseClick = Input.GetMouseButtonDown(0);
+        bool caveClick = CAVE2.GetButtonDown(CAVE2.Button.Button7);
 
-        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        if (!(mouseClick || caveClick)) return;
 
-        if (Physics.Raycast(ray, out RaycastHit hit))
+        Ray ray;
+
+        if (caveClick && controller != null)
+        {
+            ray = new Ray(controller.position, controller.forward);
+            Debug.DrawRay(controller.position, controller.forward * rayDistance, Color.green, 1f);
+        }
+        else
+        {
+            if (cam == null) cam = Camera.main;
+            if (cam == null) return;
+
+            ray = cam.ScreenPointToRay(Input.mousePosition);
+        }
+
+        if (Physics.Raycast(ray, out RaycastHit hit, rayDistance))
         {
             if (hit.transform == transform || hit.transform.IsChildOf(transform))
             {
-                isOpen = !isOpen;
-
-                if (isOpen)
-                {
-                    if (audioSource != null && openSound != null)
-                        audioSource.PlayOneShot(openSound, openVolume);
-                }
-                else
-                {
-                    if (audioSource != null && closeSound != null)
-                        audioSource.PlayOneShot(closeSound, closeVolume);
-                }
-
-                if (fridgeDoor != null) fridgeDoor.SetActive(isOpen);
-
-                if (isOpen && vocType != null)
-                    vocType.SetActive(true);
-
-                // Large VOC text appears once and floats upward
-                if (isOpen && vocTypeLarge != null && !largeTextPlayed)
-                {
-                    largeTextPlayed = true;
-                    StartCoroutine(FloatLargeText());
-                }
+                ToggleFridge();
             }
+        }
+    }
+
+    void ToggleFridge()
+    {
+        isOpen = !isOpen;
+
+        // Audio
+        if (isOpen)
+        {
+            if (audioSource != null && openSound != null)
+                audioSource.PlayOneShot(openSound, openVolume);
+        }
+        else
+        {
+            if (audioSource != null && closeSound != null)
+                audioSource.PlayOneShot(closeSound, closeVolume);
+        }
+
+        // Door toggle
+        if (fridgeDoor != null)
+            fridgeDoor.SetActive(isOpen);
+
+        // Small VOC text stays
+        if (isOpen && vocType != null)
+            vocType.SetActive(true);
+
+        // Large VOC text once
+        if (isOpen && vocTypeLarge != null && !largeTextPlayed)
+        {
+            largeTextPlayed = true;
+            StartCoroutine(FloatLargeText());
         }
     }
 

@@ -11,6 +11,10 @@ public class TapWaterToggle : MonoBehaviour
     [Header("Click Settings")]
     [SerializeField] private Camera cam;
 
+    [Header("CAVE2 Settings")]
+    [SerializeField] private Transform controller; // assign wand here
+    [SerializeField] private float rayDistance = 100f;
+
     [Header("Large Text Animation")]
     [SerializeField] private float floatDistance = 2f;
     [SerializeField] private float duration = 4f;
@@ -29,34 +33,57 @@ public class TapWaterToggle : MonoBehaviour
 
     void Update()
     {
-        if (!Input.GetMouseButtonDown(0)) return;
+        // Support BOTH desktop + CAVE2
+        bool mouseClick = Input.GetMouseButtonDown(0);
+        bool caveClick = CAVE2.GetButtonDown(CAVE2.Button.Button7); // L2 trigger
 
-        if (cam == null) cam = Camera.main;
-        if (cam == null) return;
+        if (!(mouseClick || caveClick)) return;
 
-        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        Ray ray;
 
-        if (Physics.Raycast(ray, out RaycastHit hit, 1000f))
+        if (caveClick && controller != null)
+        {
+            // CAVE2: shoot ray from controller
+            ray = new Ray(controller.position, controller.forward);
+
+            // Debug ray (optional)
+            Debug.DrawRay(controller.position, controller.forward * rayDistance, Color.blue, 1f);
+        }
+        else
+        {
+            // Desktop: use mouse
+            if (cam == null) cam = Camera.main;
+            if (cam == null) return;
+
+            ray = cam.ScreenPointToRay(Input.mousePosition);
+        }
+
+        if (Physics.Raycast(ray, out RaycastHit hit, rayDistance))
         {
             if (hit.transform == transform || hit.transform.IsChildOf(transform))
             {
-                isOn = !isOn;
-
-                // Water toggles normally
-                if (waterGroup != null)
-                    waterGroup.SetActive(isOn);
-
-                // Small H2O text appears and stays
-                if (isOn && h2oType != null)
-                    h2oType.SetActive(true);
-
-                // Large H2O text floats up once
-                if (isOn && h2oTypeLarge != null && !largeTextPlayed)
-                {
-                    largeTextPlayed = true;
-                    StartCoroutine(FloatLargeText());
-                }
+                ToggleWater();
             }
+        }
+    }
+
+    void ToggleWater()
+    {
+        isOn = !isOn;
+
+        // Water toggles normally
+        if (waterGroup != null)
+            waterGroup.SetActive(isOn);
+
+        // Small H2O text appears and stays
+        if (isOn && h2oType != null)
+            h2oType.SetActive(true);
+
+        // Large H2O text floats once
+        if (isOn && h2oTypeLarge != null && !largeTextPlayed)
+        {
+            largeTextPlayed = true;
+            StartCoroutine(FloatLargeText());
         }
     }
 
