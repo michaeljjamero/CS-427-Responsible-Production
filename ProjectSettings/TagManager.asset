@@ -9,6 +9,7 @@ TagManager:
   - VOC
   - KWH
   - CO2
+  - Chest
   layers:
   - Default
   - TransparentFX
