@@ -32,8 +32,8 @@ public class GrabbableObject : CAVE2Interactable {
 
     public enum HoldingStyle { ButtonPress, ButtonHold };
 
-    [SerializeField]
-    bool grabbed;
+     //[SerializeField]
+   public bool grabbed; //changed to public (previously was onlyy serialized: Got permission from Hal)
 
     [SerializeField]
     CAVE2.Button grabButton = CAVE2.Button.Button3;

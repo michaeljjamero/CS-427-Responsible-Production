@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 8900000, guid: 06b91d7dcb09b474a8f8ac88ce10c495, type: 3}
   m_Sun: {fileID: 741303246}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.74023134, g: 0.8252418, b: 0.9028876, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -98,7 +98,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
-  m_LightingDataAsset: {fileID: 112000000, guid: b0eb9d489865f064985c8ca4f4744259,
+  m_LightingDataAsset: {fileID: 112000000, guid: e614a4bd7c75146e3bcfd383346be4cd,
     type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -2985,6 +2985,8 @@ MonoBehaviour:
   dissipateDuration: 1.5
   floatUpAmount: 0.5
   groupDropDuration: 0.8
+  controller: {fileID: 1583879767}
+  rayDistance: 1000
 --- !u!82 &68093066
 AudioSource:
   m_ObjectHideFlags: 0
@@ -15289,6 +15291,8 @@ MonoBehaviour:
   audioSource: {fileID: 313689549}
   clickSound: {fileID: 8300000, guid: 1a1522753b1629342a2fcaa3df5e9930, type: 3}
   washingLoop: {fileID: 8300000, guid: 53f9ce1c62f08c548bcb8ed307fe925f, type: 3}
+  controller: {fileID: 1583879767}
+  rayDistance: 1000
 --- !u!65 &313689548
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -68160,6 +68164,8 @@ MonoBehaviour:
   dissipateDuration: 1.5
   floatUpAmount: 0.5
   groupDropDuration: 0.8
+  controller: {fileID: 1583879767}
+  rayDistance: 1000
 --- !u!65 &1341653192
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -72265,6 +72271,8 @@ MonoBehaviour:
   dissipateDuration: 1.5
   floatUpAmount: 0.5
   groupDropDuration: 0.8
+  controller: {fileID: 1583879767}
+  rayDistance: 1000
 --- !u!65 &1473498212
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -92925,17 +92933,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: fd476c3ad83ce4a3da012598010ccf31,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.208
+      value: -5.14
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: fd476c3ad83ce4a3da012598010ccf31,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.148
+      value: -2.163
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: fd476c3ad83ce4a3da012598010ccf31,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.397
+      value: -1.208
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: fd476c3ad83ce4a3da012598010ccf31,
         type: 3}
