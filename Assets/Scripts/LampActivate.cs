@@ -22,6 +22,10 @@ public class LampActivate : MonoBehaviour
     [SerializeField] private float floatUpAmount = 0.5f;
     [SerializeField] private float groupDropDuration = 0.8f;
 
+    [Header("CAVE2 Settings")]
+    [SerializeField] private Transform controller; // drag Wand here
+    [SerializeField] private float rayDistance = 1000f;
+
     private bool isOn = false;
     private bool isAnimating = false;
     private Coroutine lampRoutine;
@@ -48,18 +52,66 @@ public class LampActivate : MonoBehaviour
         }
     }
 
+    //void Update()
+    //{
+    //    if (!(Input.GetMouseButtonDown(0) || CAVE2.GetButtonDown(CAVE2.Button.Button5)))
+    //        return;
+
+    //    if (cam == null) cam = Camera.main;
+    //    if (cam == null) return;
+    //    if (isAnimating) return;
+
+    //    Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+
+    //    if (Physics.Raycast(ray, out RaycastHit hit, 1000f))
+    //    {
+    //        if (hit.transform == transform || hit.transform.IsChildOf(transform))
+    //        {
+    //            isOn = !isOn;
+
+    //            if (audioSource != null && clickSound != null)
+    //                audioSource.PlayOneShot(clickSound);
+
+    //            if (lampRoutine != null)
+    //                StopCoroutine(lampRoutine);
+
+    //            if (isOn)
+    //                lampRoutine = StartCoroutine(TurnOnSequence());
+    //            else
+    //                lampRoutine = StartCoroutine(TurnOffSequence());
+    //        }
+    //    }
+    //}
+
     void Update()
     {
-        if (!(Input.GetMouseButtonDown(0) || CAVE2.GetButtonDown(CAVE2.Button.Button5)))
+        bool mouseClick = Input.GetMouseButtonDown(0);
+        bool caveClick = CAVE2.GetButtonDown(CAVE2.Button.Button7); // trigger 
+
+        if (!(mouseClick || caveClick))
             return;
 
         if (cam == null) cam = Camera.main;
         if (cam == null) return;
         if (isAnimating) return;
 
-        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        Ray ray;
 
-        if (Physics.Raycast(ray, out RaycastHit hit, 1000f))
+        if (caveClick && controller != null)
+        {
+            // CAVE2 = wand ray
+            ray = new Ray(controller.position, controller.forward);
+
+            // ray 
+            Debug.DrawRay(controller.position, controller.forward * rayDistance, Color.red, 1f);
+        }
+        else
+        {
+            // Desktop
+            ray = cam.ScreenPointToRay(Input.mousePosition);
+        }
+
+        if (Physics.Raycast(ray, out RaycastHit hit, rayDistance))
         {
             if (hit.transform == transform || hit.transform.IsChildOf(transform))
             {
