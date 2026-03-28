@@ -1,25 +1,39 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EmissionMovement : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private EnergyVisualController energyController;
+    [SerializeField] private Transform cameraTransform;
 
     [Header("Movement")]
-    [SerializeField] private float baseSpeed = 0.75f;
-    [SerializeField] private float maxHeight = 1.5f;
+    [SerializeField] private float baseSpeed = 2f;
+    [SerializeField] private float maxHeight = 3f;
 
-    [Header("Optional")]
-    [SerializeField] private bool hideAtMaxCleanEnergy = true;
-    [SerializeField] private float minVisibleStrength = 0.05f;
+    [Header("Drift")]
+    [SerializeField] private float driftStrength = 0.25f;
+    [SerializeField] private float driftSpeed = 1.2f;
+
+    [Header("Swirl")]
+    [SerializeField] private float swirlRadius = 0.15f;
+    [SerializeField] private float swirlSpeed = 2f;
 
     private Vector3 startPos;
+    private Vector3 swirlOffset;
+    private Vector3 lastSwirlOffset;
+    private float randomSeed;
 
     private void Start()
     {
-        startPos = transform.localPosition;
+        startPos = transform.position;
+
+        if (energyController == null)
+            energyController = FindObjectOfType<EnergyVisualController>();
+
+        if (cameraTransform == null && Camera.main != null)
+            cameraTransform = Camera.main.transform;
+
+        randomSeed = Random.Range(0f, 100f);
     }
 
     private void Update()
@@ -27,28 +41,52 @@ public class EmissionMovement : MonoBehaviour
         if (energyController == null) return;
 
         float t = Mathf.Clamp01(energyController.cleanEnergy / 100f);
-
-        // full emissions at low clean energy, less emissions at high clean energy
         float emissionStrength = 1f - t;
 
-        // hide completely when clean energy is high
-        if (hideAtMaxCleanEnergy && emissionStrength <= minVisibleStrength)
+        float currentSpeed = baseSpeed * Mathf.Max(emissionStrength, 0.1f);
+
+        // Move upward
+        Vector3 upwardMove = Vector3.up * currentSpeed * Time.deltaTime;
+
+        // Gentle drift using Perlin noise
+        float driftX = Mathf.PerlinNoise(Time.time * driftSpeed, randomSeed) - 0.5f;
+        float driftZ = Mathf.PerlinNoise(randomSeed, Time.time * driftSpeed) - 0.5f;
+        Vector3 driftMove = new Vector3(driftX, 0f, driftZ) * driftStrength * emissionStrength * Time.deltaTime;
+
+        // Swirl motion
+        float swirlAngle = Time.time * swirlSpeed + randomSeed;
+        swirlOffset = new Vector3(
+            Mathf.Cos(swirlAngle),
+            0f,
+            Mathf.Sin(swirlAngle)
+        ) * (swirlRadius * emissionStrength);
+
+        // Apply only the change in swirl offset each frame
+        Vector3 swirlMove = swirlOffset - lastSwirlOffset;
+        lastSwirlOffset = swirlOffset;
+
+        transform.position += upwardMove + driftMove + swirlMove;
+
+        // Keep text upright but facing the camera
+        if (cameraTransform != null)
         {
-            gameObject.SetActive(false);
-            return;
-        }
-        else if (!gameObject.activeSelf)
-        {
-            gameObject.SetActive(true);
+            Vector3 dir = cameraTransform.position - transform.position;
+            dir.y = 0f;
+
+            if (dir.sqrMagnitude > 0.001f)
+            {
+                transform.rotation = Quaternion.LookRotation(dir);
+            }
         }
 
-        float currentSpeed = baseSpeed * emissionStrength;
-
-        transform.localPosition += Vector3.up * currentSpeed * Time.deltaTime;
-
-        if (transform.localPosition.y >= startPos.y + maxHeight)
+        if (transform.position.y >= startPos.y + maxHeight)
         {
-            transform.localPosition = startPos;
+            Destroy(gameObject);
         }
+    }
+
+    public void SetEnergyController(EnergyVisualController controller)
+    {
+        energyController = controller;
     }
 }
