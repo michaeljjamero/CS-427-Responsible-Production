@@ -32,6 +32,10 @@ public class WashingMachineActivate : MonoBehaviour
     [SerializeField] private AudioClip clickSound;
     [SerializeField] private AudioClip washingLoop;
 
+    [Header("CAVE2 Settings")]
+    [SerializeField] private Transform controller; // drag Wand here
+    [SerializeField] private float rayDistance = 1000f;
+
     private bool isOn = false;
     private bool isAnimating = false;
 
@@ -67,16 +71,52 @@ public class WashingMachineActivate : MonoBehaviour
         }
     }
 
+    //void Update()
+    //{
+    //    if (!(Input.GetMouseButtonDown(0) || CAVE2.GetButtonDown(CAVE2.Button.Button5)))
+    //        return;
+    //    if (cam == null) return;
+    //    if (isAnimating) return;
+
+    //    Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+
+    //    if (Physics.Raycast(ray, out RaycastHit hit))
+    //    {
+    //        if (hit.transform == transform || hit.transform.IsChildOf(transform))
+    //        {
+    //            ToggleMachine();
+    //        }
+    //    }
+    //}
+
     void Update()
     {
-        if (!(Input.GetMouseButtonDown(0) || CAVE2.GetButtonDown(CAVE2.Button.Button5)))
+        bool mouseClick = Input.GetMouseButtonDown(0);
+        bool caveClick = CAVE2.GetButtonDown(CAVE2.Button.Button5);
+
+        if (!(mouseClick || caveClick))
             return;
+
+        if (cam == null) cam = Camera.main;
         if (cam == null) return;
         if (isAnimating) return;
 
-        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        Ray ray;
 
-        if (Physics.Raycast(ray, out RaycastHit hit))
+        if (caveClick && controller != null)
+        {
+            // CAVE2 wand ray
+            ray = new Ray(controller.position, controller.forward);
+
+            Debug.DrawRay(controller.position, controller.forward * rayDistance, Color.red, 1f);
+        }
+        else
+        {
+            // desktop mouse ray
+            ray = cam.ScreenPointToRay(Input.mousePosition);
+        }
+
+        if (Physics.Raycast(ray, out RaycastHit hit, rayDistance))
         {
             if (hit.transform == transform || hit.transform.IsChildOf(transform))
             {
