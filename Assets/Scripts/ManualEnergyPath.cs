@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ManualEnergyPath : MonoBehaviour
 {
-        [Header("Path Points")]
+    [Header("Path Points")]
     public Transform[] points;
 
     [Header("Line")]

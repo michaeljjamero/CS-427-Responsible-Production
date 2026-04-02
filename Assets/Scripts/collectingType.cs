@@ -2,6 +2,8 @@
 
 public class collectingType : MonoBehaviour
 {
+    [SerializeField] private AudioSource audioSource; // drag from inspector
+
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("CH4") ||
@@ -14,7 +16,9 @@ public class collectingType : MonoBehaviour
 
             Debug.Log("Collected: " + other.tag);
 
-            // Completely remove it so it can't block raycasts
+            //  PLAY SOUND
+            audioSource.Play();
+
             Destroy(other.gameObject);
         }
     }
