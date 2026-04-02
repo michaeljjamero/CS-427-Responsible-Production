@@ -20,7 +20,7 @@ public class EmissionSpawner : MonoBehaviour
         if (energyController == null || emissionPrefab == null || spawnPoints == null || spawnPoints.Length == 0)
             return;
 
-        float t = Mathf.Clamp01(energyController.cleanEnergy / 100f);
+        float t = Mathf.Clamp01(energyController.cleanEnergy / 4f);
         float emissionStrength = 1f - t;
 
         activeEmissions.RemoveAll(e => e == null);
