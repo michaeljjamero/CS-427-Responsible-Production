@@ -17501,7 +17501,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointA: {fileID: 1535048804}
   pointB: {fileID: 540759955}
-  moveSpeed: 1.5
+  moveSpeed: 0.5
   stopDistance: 0.05
   turnSpeed: 180
 --- !u!1 &348095106
