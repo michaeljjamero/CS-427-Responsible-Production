@@ -8,7 +8,7 @@ public class TextSwaponEnergy : MonoBehaviour
     [SerializeField] private GameObject instructionText;
 
     [Header("Settings")]
-    [SerializeField] private int triggerEnergy = 8;
+    [SerializeField] private int triggerEnergy = 4;
 
     private bool triggered = false;
 
