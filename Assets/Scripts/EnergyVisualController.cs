@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class EnergyVisualController : MonoBehaviour
 {
-    [Range(0, 100)]
+    [Range(0, 4)]
     public float cleanEnergy = 0f;
 
     [Header("References")]
@@ -37,7 +38,7 @@ public class EnergyVisualController : MonoBehaviour
     public Color ambientHigh = new Color(0.70f, 0.70f, 0.70f);
 
     [Header("Flicker")]
-    [Range(0, 100)] public float flickerThreshold = 30f;
+    [Range(0, 4)] public float flickerThreshold = 30f;
     public float flickerAmount = 0.25f;
     public float flickerSpeed = 8f;
 
@@ -75,11 +76,29 @@ public class EnergyVisualController : MonoBehaviour
         {
             baseInteriorIntensities[i] = interiorLightsToFlicker[i].intensity;
         }
+
+        if (countingTypes.instance != null)
+        {
+            countingTypes.instance.OnEnergyChanged += HandleEnergyChanged;
+        }
+    }
+
+    void HandleEnergyChanged(int newTotalEnergy)
+    {
+        cleanEnergy = Mathf.Clamp(newTotalEnergy, 0f, 4f);
+    }
+
+    void OnDestroy()
+    {
+        if (countingTypes.instance != null)
+        {
+            countingTypes.instance.OnEnergyChanged -= HandleEnergyChanged;
+        }
     }
 
     void Update()
     {
-        float t = Mathf.Clamp01(cleanEnergy / 100f);
+        float t = Mathf.Clamp01(cleanEnergy / 4f);
 
         // Sun
         if (sunDirectionalLight != null)

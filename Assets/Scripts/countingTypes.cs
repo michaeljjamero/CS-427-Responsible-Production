@@ -16,7 +16,7 @@ public class countingTypes : MonoBehaviour
 
     [Header("Chest Unlock Settings")]
     [SerializeField] private string chestTag = "Chest";
-    [SerializeField] private int unlockThreshold = 8;
+    [SerializeField] private int unlockThreshold = 4;
 
     private List<GrabbableObject> chestGrabs = new List<GrabbableObject>();
     private bool unlocked = false;
