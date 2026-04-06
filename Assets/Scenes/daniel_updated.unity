@@ -7064,14 +7064,14 @@ MonoBehaviour:
   - {fileID: 105774113}
   - {fileID: 2121263541}
   textPrefab: {fileID: 2147136280}
-  textCount: 3
-  displayText: CLEAN ENERGY
+  textCount: 5
+  displayText: ENERGY
   speed: 2
   spacing: 2.5
   textYOffset: 0
-  faceCamera: 1
-  colorA: {r: 0, g: 0.6, b: 1, a: 1}
-  colorB: {r: 0, g: 1, b: 1, a: 1}
+  faceCamera: 0
+  colorA: {r: 0, g: 0.6, b: 1, a: 0.6784314}
+  colorB: {r: 0, g: 1, b: 1, a: 0.6784314}
   pulseSpeed: 2
 --- !u!114 &201337438
 MonoBehaviour:
@@ -7095,8 +7095,8 @@ MonoBehaviour:
   - {fileID: 2121263541}
   line: {fileID: 0}
   yOffset: 0.03
-  colorA: {r: 0.1, g: 0.7, b: 1, a: 1}
-  colorB: {r: 0.6, g: 1, b: 1, a: 1}
+  colorA: {r: 0.1, g: 0.7, b: 1, a: 0.6784314}
+  colorB: {r: 0.6, g: 1, b: 1, a: 0.6784314}
   pulseSpeed: 2
   minWidth: 0.06
   maxWidth: 0.12
@@ -47059,14 +47059,14 @@ MonoBehaviour:
   - {fileID: 233117931}
   - {fileID: 577281554}
   textPrefab: {fileID: 2147136280}
-  textCount: 3
-  displayText: CLEAN ENERGY
+  textCount: 5
+  displayText: ENERGY
   speed: 2
   spacing: 2.5
   textYOffset: 0
-  faceCamera: 1
-  colorA: {r: 0, g: 0.6, b: 1, a: 1}
-  colorB: {r: 0, g: 1, b: 1, a: 1}
+  faceCamera: 0
+  colorA: {r: 0, g: 0.6, b: 1, a: 0.6784314}
+  colorB: {r: 0, g: 1, b: 1, a: 0.6784314}
   pulseSpeed: 2
 --- !u!114 &984997393
 MonoBehaviour:
@@ -47090,8 +47090,8 @@ MonoBehaviour:
   - {fileID: 577281554}
   line: {fileID: 0}
   yOffset: 0.03
-  colorA: {r: 0.1, g: 0.7, b: 1, a: 1}
-  colorB: {r: 0.6, g: 1, b: 1, a: 1}
+  colorA: {r: 0.1, g: 0.7, b: 1, a: 0.6784314}
+  colorB: {r: 0.6, g: 1, b: 1, a: 0.6784314}
   pulseSpeed: 2
   minWidth: 0.06
   maxWidth: 0.12
@@ -72090,8 +72090,8 @@ MonoBehaviour:
   - {fileID: 1423400711}
   line: {fileID: 1437242688}
   yOffset: 0.03
-  colorA: {r: 0.1, g: 0.7, b: 1, a: 1}
-  colorB: {r: 0.6, g: 1, b: 1, a: 1}
+  colorA: {r: 0.1, g: 0.7, b: 1, a: 0.6784314}
+  colorB: {r: 0.6, g: 1, b: 1, a: 0.6784314}
   pulseSpeed: 2
   minWidth: 0.06
   maxWidth: 0.12
@@ -72135,14 +72135,14 @@ MonoBehaviour:
   - {fileID: 508942513}
   - {fileID: 1423400711}
   textPrefab: {fileID: 1643973576}
-  textCount: 3
-  displayText: CLEAN ENERGY
+  textCount: 7
+  displayText: ENERGY
   speed: 2
   spacing: 2.5
   textYOffset: 0
-  faceCamera: 1
-  colorA: {r: 0, g: 0.6, b: 1, a: 1}
-  colorB: {r: 0, g: 1, b: 1, a: 1}
+  faceCamera: 0
+  colorA: {r: 0, g: 0.6, b: 1, a: 0.6784314}
+  colorB: {r: 0, g: 1, b: 1, a: 0.6784314}
   pulseSpeed: 2
 --- !u!120 &1437242688
 LineRenderer:
@@ -85225,8 +85225,8 @@ MonoBehaviour:
   - {fileID: 1486871706}
   line: {fileID: 1662064089}
   yOffset: 0.03
-  colorA: {r: 0.1, g: 0.7, b: 1, a: 1}
-  colorB: {r: 0.6, g: 1, b: 1, a: 1}
+  colorA: {r: 0.1, g: 0.7, b: 1, a: 0.6784314}
+  colorB: {r: 0.6, g: 1, b: 1, a: 0.6784314}
   pulseSpeed: 2
   minWidth: 0.06
   maxWidth: 0.12
@@ -85270,14 +85270,14 @@ MonoBehaviour:
   - {fileID: 1750821977}
   - {fileID: 1486871706}
   textPrefab: {fileID: 1643973576}
-  textCount: 3
-  displayText: CLEAN ENERGY
+  textCount: 6
+  displayText: ENERGY
   speed: 2
   spacing: 2.5
   textYOffset: 0
-  faceCamera: 1
-  colorA: {r: 0, g: 0.6, b: 1, a: 1}
-  colorB: {r: 0, g: 1, b: 1, a: 1}
+  faceCamera: 0
+  colorA: {r: 0, g: 0.6, b: 1, a: 0.6784314}
+  colorB: {r: 0, g: 1, b: 1, a: 0.6784314}
   pulseSpeed: 2
 --- !u!120 &1662064089
 LineRenderer:
@@ -99543,7 +99543,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: CLEAN ENERGY
+  m_text: ENERGY
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -99612,10 +99612,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0.2130928, w: 0}
   m_textInfo:
     textComponent: {fileID: 2147136280}
-    characterCount: 12
+    characterCount: 6
     spriteCount: 0
-    spaceCount: 1
-    wordCount: 2
+    spaceCount: 0
+    wordCount: 1
     linkCount: 0
     lineCount: 1
     pageCount: 1

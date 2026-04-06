@@ -61,7 +61,9 @@ public class PathTextFlow : MonoBehaviour
 
             if (dir != Vector3.zero)
             {
-                spawnedTexts[i].transform.rotation = Quaternion.LookRotation(dir);
+                Quaternion rot = Quaternion.LookRotation(dir);
+                rot *= Quaternion.Euler(0, 180f, 0); // flip if backwards
+                spawnedTexts[i].transform.rotation = rot;
             }
 
             if (faceCamera && Camera.main != null)
