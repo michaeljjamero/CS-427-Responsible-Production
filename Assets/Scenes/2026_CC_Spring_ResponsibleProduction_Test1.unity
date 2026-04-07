@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.8
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 741303246}
-  m_IndirectSpecularColor: {r: 0.41814393, g: 0.5029237, b: 0.605572, a: 0.8}
+  m_IndirectSpecularColor: {r: 0.3192231, g: 0.34171373, b: 0.39227945, a: 0.8}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5139,7 +5139,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1202863762888282, guid: 42b7202bca3475741b21ba22fa2a1106, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 4294967294
       objectReference: {fileID: 0}
     - target: {fileID: 1281216435993880, guid: 42b7202bca3475741b21ba22fa2a1106, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5159,7 +5159,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1967957919478212, guid: 42b7202bca3475741b21ba22fa2a1106, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 4294967294
+      objectReference: {fileID: 0}
+    - target: {fileID: 23630076908652880, guid: 42b7202bca3475741b21ba22fa2a1106,
+        type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42b7202bca3475741b21ba22fa2a1106, type: 3}
@@ -43410,8 +43415,8 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 1024
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 10.1, y: 4.18, z: 12.71}
-  m_BoxOffset: {x: 0.071509525, y: 0.82625294, z: -0.2228241}
+  m_BoxSize: {x: 5.47, y: 6.7, z: 4.32}
+  m_BoxOffset: {x: 0.0715096, y: 0.82625294, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
   m_ShadowDistance: 100
@@ -43437,7 +43442,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 770656987}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.747, y: 4.55, z: -11.731}
+  m_LocalPosition: {x: -8.747, y: 4.55, z: -11.733}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 277220959}
@@ -73227,7 +73232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e601216cd3f485a4cbe9e83d5de7aa20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cleanEnergy: 0
+  cleanEnergy: 3
   sunDirectionalLight: {fileID: 741303246}
   skyMinExposure: 0.05
   skyMaxExposure: 0.6
