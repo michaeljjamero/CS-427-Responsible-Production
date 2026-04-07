@@ -49064,7 +49064,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000012806552110, guid: c1621f4dd1e8c2748a5a423aa7736d55, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.288
+      value: -9.056211
       objectReference: {fileID: 0}
     - target: {fileID: 4000012806552110, guid: c1621f4dd1e8c2748a5a423aa7736d55, type: 3}
       propertyPath: m_LocalPosition.y
@@ -49072,23 +49072,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000012806552110, guid: c1621f4dd1e8c2748a5a423aa7736d55, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.61
+      value: -3.77181
       objectReference: {fileID: 0}
     - target: {fileID: 4000012806552110, guid: c1621f4dd1e8c2748a5a423aa7736d55, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4000012806552110, guid: c1621f4dd1e8c2748a5a423aa7736d55, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.21754768
       objectReference: {fileID: 0}
     - target: {fileID: 4000012806552110, guid: c1621f4dd1e8c2748a5a423aa7736d55, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4000012806552110, guid: c1621f4dd1e8c2748a5a423aa7736d55, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9760497
       objectReference: {fileID: 0}
     - target: {fileID: 4000012806552110, guid: c1621f4dd1e8c2748a5a423aa7736d55, type: 3}
       propertyPath: m_RootOrder
@@ -49100,7 +49100,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000012806552110, guid: c1621f4dd1e8c2748a5a423aa7736d55, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -25.130001
       objectReference: {fileID: 0}
     - target: {fileID: 4000012806552110, guid: c1621f4dd1e8c2748a5a423aa7736d55, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -49147,6 +49147,26 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4000012536975182, guid: c1621f4dd1e8c2748a5a423aa7736d55, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012536975182, guid: c1621f4dd1e8c2748a5a423aa7736d55, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.5519369
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012536975182, guid: c1621f4dd1e8c2748a5a423aa7736d55, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012536975182, guid: c1621f4dd1e8c2748a5a423aa7736d55, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 67
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012536975182, guid: c1621f4dd1e8c2748a5a423aa7736d55, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.83388585
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013277262070, guid: c1621f4dd1e8c2748a5a423aa7736d55, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -49161,19 +49181,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013277262070, guid: c1621f4dd1e8c2748a5a423aa7736d55, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4000013277262070, guid: c1621f4dd1e8c2748a5a423aa7736d55, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.6249613
       objectReference: {fileID: 0}
     - target: {fileID: 4000013277262070, guid: c1621f4dd1e8c2748a5a423aa7736d55, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4000013277262070, guid: c1621f4dd1e8c2748a5a423aa7736d55, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7806558
       objectReference: {fileID: 0}
     - target: {fileID: 4000013277262070, guid: c1621f4dd1e8c2748a5a423aa7736d55, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -49181,7 +49201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013277262070, guid: c1621f4dd1e8c2748a5a423aa7736d55, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 77.359
       objectReference: {fileID: 0}
     - target: {fileID: 1000011531200472, guid: c1621f4dd1e8c2748a5a423aa7736d55, type: 3}
       propertyPath: m_Name
@@ -49281,17 +49301,44 @@ PrefabInstance:
     - target: {fileID: 114000010683909002, guid: c1621f4dd1e8c2748a5a423aa7736d55,
         type: 3}
       propertyPath: m_Text
-      value: Place holder
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 114000011111918770, guid: c1621f4dd1e8c2748a5a423aa7736d55,
         type: 3}
       propertyPath: m_Text
-      value: Placeholder
+      value: "Our solution is a self-sustaining \u201Csmart house\u201D designed to
+        capture, store, and redistribute energy generated by major household appliances.
+        Instead of letting energy be wasted, the system redirects it to power other
+        areas of the home, creating a continuous loop of reuse. By managing how energy
+        flows between devices, the house is able to operate more efficiently and reduce
+        overall consumption. This approach minimizes reliance on excess external energy
+        sources while promoting a more sustainable and balanced use of resources throughout
+        the home."
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011111918770, guid: c1621f4dd1e8c2748a5a423aa7736d55,
+        type: 3}
+      propertyPath: m_FontData.m_LineSpacing
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011111918770, guid: c1621f4dd1e8c2748a5a423aa7736d55,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011111918770, guid: c1621f4dd1e8c2748a5a423aa7736d55,
+        type: 3}
+      propertyPath: m_FontData.m_BestFit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011111918770, guid: c1621f4dd1e8c2748a5a423aa7736d55,
+        type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114000011641407824, guid: c1621f4dd1e8c2748a5a423aa7736d55,
         type: 3}
       propertyPath: m_Text
-      value: 'CS 427 - Creative Coding
+      value: 'DES/CS 427 - Creative Coding
 
         Spring 2026
 
