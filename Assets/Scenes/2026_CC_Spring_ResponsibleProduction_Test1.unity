@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.8
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 741303246}
-  m_IndirectSpecularColor: {r: 0.2562479, g: 0.23987097, b: 0.2577732, a: 0.8}
+  m_IndirectSpecularColor: {r: 0.48944366, g: 0.587962, b: 0.707372, a: 0.8}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -43349,7 +43349,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 1024
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 3.08, y: 4.4641056, z: 3.4982052}
+  m_BoxSize: {x: 3.08, y: 4.17, z: 1.92}
   m_BoxOffset: {x: 0.11103809, y: 0.82625294, z: -0.2228241}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -64611,7 +64611,7 @@ PrefabInstance:
     - target: {fileID: -8395144002639726196, guid: abcb9d45ce00b47c5a466e729370c47b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.196
+      value: 0.188
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: abcb9d45ce00b47c5a466e729370c47b,
         type: 3}
@@ -73169,7 +73169,7 @@ MonoBehaviour:
   cleanEnergy: 0
   sunDirectionalLight: {fileID: 741303246}
   skyMinExposure: 0.05
-  skyMaxExposure: 0.7
+  skyMaxExposure: 0.6
   skyLowEnergyTint: {r: 1, g: 0.55, b: 0.35, a: 1}
   skyHighEnergyTint: {r: 1, g: 0.9803922, b: 0.90196085, a: 1}
   sunMinIntensity: 0.2
@@ -95516,7 +95516,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4390720240182834, guid: 5b814183ae422b045b9571074a5f4a44, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.920001
+      value: -4.434
       objectReference: {fileID: 0}
     - target: {fileID: 4390720240182834, guid: 5b814183ae422b045b9571074a5f4a44, type: 3}
       propertyPath: m_LocalRotation.x
@@ -95569,11 +95569,31 @@ PrefabInstance:
     - target: {fileID: 23035163459701680, guid: 5b814183ae422b045b9571074a5f4a44,
         type: 3}
       propertyPath: m_ReflectionProbeUsage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23035163459701680, guid: 5b814183ae422b045b9571074a5f4a44,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23035163459701680, guid: 5b814183ae422b045b9571074a5f4a44,
+        type: 3}
+      propertyPath: m_ReceiveShadows
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 23515633580802884, guid: 5b814183ae422b045b9571074a5f4a44,
         type: 3}
       propertyPath: m_ReflectionProbeUsage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23515633580802884, guid: 5b814183ae422b045b9571074a5f4a44,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23515633580802884, guid: 5b814183ae422b045b9571074a5f4a44,
+        type: 3}
+      propertyPath: m_ReceiveShadows
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
